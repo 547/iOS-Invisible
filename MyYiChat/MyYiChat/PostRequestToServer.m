@@ -10,7 +10,9 @@
 #import "NSString+More.h"
 #import "Base64.h"
 @implementation PostRequestToServer
-
+{
+    ASIFormDataRequest *downloadRequest;
+}
 //注册
 -(void)registIdWithUrl:(NSString *)urlString userName:(NSString *)userName psw:(NSString *)psw nickName:(NSString *)nickName email:(NSString *)email
 {
@@ -140,16 +142,22 @@
     request.tag=111;
     [request startAsynchronous];
 }
--(void)downLoadFileWitnUrl:(NSString *)url
+-(void)downLoadFileWitnUrl:(NSString *)url name:(NSString *)name
 {
-    ASIFormDataRequest *request=[ASIFormDataRequest requestWithURL:[NSURL URLWithString:url]];
-    request.tag=112;
-    NSString *finalPath=[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0]stringByAppendingPathComponent:@"download"];
-    NSString *tempPath=[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0]stringByAppendingPathComponent:@"tempDownload"];
-    request.downloadDestinationPath=finalPath;
-    request.temporaryFileDownloadPath=tempPath;
-    request.allowResumeForFileDownloads=YES;
-    [request startAsynchronous];
+    downloadRequest=[ASIFormDataRequest requestWithURL:[NSURL URLWithString:url]];
+    downloadRequest.tag=112;
+    NSString *finalPath=[NSString getPathOfDoucoment:name];
+    NSString *tempPath=[NSString getPathOfDoucoment:[NSString stringWithFormat:@"temp%@",name]];//PS:如果设置了临时地址必须把临时地址设置的和最终地址不一样，不然下载不了，要不就直接不设临时地址
+    downloadRequest.downloadProgressDelegate=self;
+    downloadRequest.downloadDestinationPath=finalPath;
+    downloadRequest.temporaryFileDownloadPath=tempPath;
+    downloadRequest.allowResumeForFileDownloads=YES;
+    [downloadRequest startAsynchronous];
+}
+-(void)stopDownload
+{
+    [downloadRequest cancel];//取消下载
+
 }
 #pragma mask==ASIHTTPRequestDelegate
 -(void)requestFinished:(ASIHTTPRequest *)request
@@ -190,9 +198,7 @@
     if (request.tag==111) {
         [self.delegate getFileMessgeSucceed:request];
     }
-    if (request.tag==112) {
-        [self.delegate downLoadFileWitnUrlSucceed:request];
-    }
+    
 
 }
 
@@ -234,8 +240,9 @@
     if (request.tag==111) {
         [self.delegate getFileMessgeFailed:request];
     }
-    if (request.tag==112) {
-        [self.delegate downLoadFileWitnUrlFailed:request];
-    }
+}
+-(void)setProgress:(float)newProgress
+{
+    [self.delegate downLoadFileWitnUrlProgress:newProgress];
 }
 @end

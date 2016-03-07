@@ -21,4 +21,8 @@
     NSString *dateStr = [forma stringFromDate:date];
     return dateStr;
 }
++(NSString *)getPathOfDoucoment:(NSString *)name
+{
+           return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0]stringByAppendingPathComponent:name];
+    }
 @end

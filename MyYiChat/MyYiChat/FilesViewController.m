@@ -9,7 +9,7 @@
 #import "FilesViewController.h"
 #import "UsefulHeader.h"
 #import "MyCollectionViewCell.h"
-#import "UIImageView+WebCache.h"
+#import "FileContentViewController.h"
 #define loyoutWidth 100
 @interface FilesViewController ()<PostRequestToServerDelegate,UICollectionViewDataSource,UICollectionViewDelegate,MyCollectionViewCellDelegate,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate,ASIProgressDelegate>
 
@@ -26,6 +26,7 @@
     NSMutableArray *fileLeftArray;
     NSMutableArray *fileRightArray;
     UICollectionView *collectionLeft;
+    int tag;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,7 +45,7 @@
 }
 -(void)initUI
 {
-    self.navigationController.navigationBar.hidden=YES;
+    
     [self setTopView];
     [self setMiddleView];
 
@@ -67,8 +68,8 @@
     scroll.tag=3;
     scroll.delegate=self;
     scroll.pagingEnabled=YES;
-    scroll.alwaysBounceHorizontal=YES;
-//    scroll.backgroundColor=[UIColor redColor];
+//    scroll.alwaysBounceVertical=NO;
+//    scroll.alwaysBounceHorizontal=YES;
     scroll.contentSize=CGSizeMake(2*SCREENWIDTH, scroll.frame.size.height);
     [self.view addSubview:scroll];
     
@@ -91,8 +92,7 @@
     layou.itemSize=CGSizeMake(loyoutWidth, loyoutWidth);
     layou.scrollDirection=UICollectionViewScrollDirectionVertical;
     UICollectionView *collection=[[UICollectionView alloc]initWithFrame:frame collectionViewLayout:layou];
-    collection.alwaysBounceVertical=NO;
-    collection.alwaysBounceHorizontal=YES;
+
     collection.backgroundColor=[UIColor whiteColor];
     [collection registerNib:[UINib nibWithNibName:@"MyCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
     
@@ -145,12 +145,17 @@
     if (file.isDownload) {
         
         //
-        
-        
+        cell.centerLabel.text=[NSString stringWithFormat:@"%0.2f%@",currentProgress*100,@"%"];
         //半透明的label做下载进度条，其高度随下载进度变化
         CGFloat x=cell.viewLabel.frame.origin.x;
         CGFloat height=cell.mainImage.frame.size.height*currentProgress;
         cell.viewLabel.frame=CGRectMake(x, height, cell.viewLabel.frame.size.width, height);
+        if (currentProgress==1.0) {
+            cell.centerLabel.text=@"查看";
+            file.downloaded=YES;
+            cell.viewLabel.hidden=YES;
+        }
+        
 
     }
     
@@ -161,24 +166,49 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
+   
     FileModel *file=nil;
     if (collectionView.tag==1) {
     file=fileLeftArray[indexPath.row];
+        tag=1;
     }else{
     file=fileRightArray[indexPath.row];
+        tag=2;
     }
-    file.isDownload=YES;
-    //下载
+    NSLog(@"%@",file.url);
     downLoadRequest=[[PostRequestToServer alloc]init];
-    [downLoadRequest downLoadFileWitnUrl:file.url];
-    downLoadRequest.progressDelegate=self;
+
+    if (file.isDownload) {
+        [downLoadRequest stopDownload];
+//        downLoadRequest 
+    }else{
+        file.isDownload=YES;
+               [downLoadRequest downLoadFileWitnUrl:file.url name:file.tname];
+        downLoadRequest.delegate=self;
+    
+    }
+    if (file.downloaded) {//已经下载完
+        FileContentViewController *fileVC=[[FileContentViewController alloc]init];
+        fileVC.file=file;
+        [self.navigationController pushViewController:fileVC animated:YES];
+        
+    }
+    
     
 }
--(void)setProgress:(float)newProgress
+-(void)downLoadFileWitnUrlProgress:(float)newProgress
 {
     currentProgress=newProgress;
     NSLog(@"当前的进度：%0.2f",newProgress);
+    if (tag==1) {
+        [collectionLeft reloadData];
+    }
+    if (tag==2) {
+        [collectionRight reloadData];
+    }
+
 }
+
 -(void)getFileMessgeSucceed:(ASIHTTPRequest *)request
 {
    fileLeftArray= [MyJson getPersonFileMessage:[NSJSONSerialization JSONObjectWithData:request.responseData options:NSJSONReadingAllowFragments error:nil]];
@@ -203,7 +233,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     self.tabBarController.tabBar.hidden=NO;
-
+    self.navigationController.navigationBar.hidden=YES;
     
     
 }

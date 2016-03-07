@@ -197,6 +197,7 @@ NewsModel *newnew=[NewsModel createNewsContent:news.news_title source:news.sourc
     NSMutableArray *fileArray=[[NSMutableArray alloc]init];
     NSDictionary *filelist=[dic objectForKey:@"filelist"];
     NSArray *pub_file=[filelist objectForKey:@"pub_file"];
+//    NSLog(@"%@",pub_file);
     for (NSDictionary *dict in pub_file) {
         NSString *author=[dict objectForKey:@"author"];
         NSString *fileDescription=[dict objectForKey:@"description"];
@@ -224,7 +225,7 @@ NewsModel *newnew=[NewsModel createNewsContent:news.news_title source:news.sourc
     NSDictionary *filelist=[dic objectForKey:@"filelist"];
     NSArray *per_file=[filelist objectForKey:@"per_file"];
     
-//    NSLog(@"%@",pub_file);
+//    NSLog(@"%@",per_file);
     for (NSDictionary *dict in per_file) {
         NSString *author=[dict objectForKey:@"author"];
         NSString *fileDescription=[dict objectForKey:@"description"];

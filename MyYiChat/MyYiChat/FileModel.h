@@ -10,13 +10,15 @@
 
 @interface FileModel : NSObject
 @property(nonatomic,assign)BOOL isPerson;//是否是个人文件
+@property(nonatomic,assign)BOOL isDownload;//是否在下载
+@property(nonatomic,assign)BOOL downloaded;//是否已经下载
 @property(nonatomic,strong)NSString *Id;
 @property(nonatomic,assign)int type;
 @property(nonatomic,strong)NSString *mimetype;
 @property(nonatomic,strong)NSString *image_url;
 @property(nonatomic,strong)NSString *url;
 @property(nonatomic,strong)NSString *name;
-@property(nonatomic,assign)BOOL isDownload;
+
 @property(nonatomic,strong)NSString *fileDescription;
 @property(nonatomic,strong)NSString *author;
 @property(nonatomic,strong)NSString *tname;

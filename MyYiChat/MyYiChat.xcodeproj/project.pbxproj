@@ -14,6 +14,11 @@
 		041303691C882C9F0018FA57 /* PersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 041303681C882C9F0018FA57 /* PersonModel.m */; };
 		0413036D1C8835750018FA57 /* PersonMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0413036B1C8835750018FA57 /* PersonMessageViewController.m */; };
 		0413036E1C8835750018FA57 /* PersonMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0413036C1C8835750018FA57 /* PersonMessageViewController.xib */; };
+		041C9B631C8D8513009F5A5E /* FileContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041C9B611C8D8513009F5A5E /* FileContentViewController.m */; };
+		041C9B641C8D8513009F5A5E /* FileContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041C9B621C8D8513009F5A5E /* FileContentViewController.xib */; };
+		041C9B661C8DBDCD009F5A5E /* beijingdejinshanshang.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 041C9B651C8DBDCD009F5A5E /* beijingdejinshanshang.mp3 */; };
+		041C9B681C8DC33E009F5A5E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041C9B671C8DC33E009F5A5E /* AVFoundation.framework */; };
+		041C9B6A1C8DCCC9009F5A5E /* 超人之死_3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 041C9B691C8DCCC9009F5A5E /* 超人之死_3.mp4 */; };
 		04DEEFB01C86A67000A6D5A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DEEFAF1C86A67000A6D5A7 /* main.m */; };
 		04DEEFB31C86A67000A6D5A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DEEFB21C86A67000A6D5A7 /* AppDelegate.m */; };
 		04DEEFB51C86A67000A6D5A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DEEFB41C86A67000A6D5A7 /* Assets.xcassets */; };
@@ -121,6 +126,12 @@
 		0413036A1C8835750018FA57 /* PersonMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonMessageViewController.h; sourceTree = "<group>"; };
 		0413036B1C8835750018FA57 /* PersonMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonMessageViewController.m; sourceTree = "<group>"; };
 		0413036C1C8835750018FA57 /* PersonMessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonMessageViewController.xib; sourceTree = "<group>"; };
+		041C9B601C8D8513009F5A5E /* FileContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileContentViewController.h; sourceTree = "<group>"; };
+		041C9B611C8D8513009F5A5E /* FileContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileContentViewController.m; sourceTree = "<group>"; };
+		041C9B621C8D8513009F5A5E /* FileContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileContentViewController.xib; sourceTree = "<group>"; };
+		041C9B651C8DBDCD009F5A5E /* beijingdejinshanshang.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beijingdejinshanshang.mp3; sourceTree = "<group>"; };
+		041C9B671C8DC33E009F5A5E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		041C9B691C8DCCC9009F5A5E /* 超人之死_3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "超人之死_3.mp4"; sourceTree = "<group>"; };
 		0462E4E91C8D2EBC00FC5747 /* UsefulHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UsefulHeader.h; sourceTree = "<group>"; };
 		04DEEFAB1C86A67000A6D5A7 /* MyYiChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyYiChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DEEFAF1C86A67000A6D5A7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -279,6 +290,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				041C9B681C8DC33E009F5A5E /* AVFoundation.framework in Frameworks */,
 				04DEF0471C86A80B00A6D5A7 /* libz.1.2.5.tbd in Frameworks */,
 				04DEF0451C86A80300A6D5A7 /* SystemConfiguration.framework in Frameworks */,
 				04DEF0431C86A7F500A6D5A7 /* MobileCoreServices.framework in Frameworks */,
@@ -362,6 +374,9 @@
 				04DEF07F1C86E05300A6D5A7 /* FilesViewController.h */,
 				04DEF0801C86E05300A6D5A7 /* FilesViewController.m */,
 				04DEF0811C86E05300A6D5A7 /* FilesViewController.xib */,
+				041C9B601C8D8513009F5A5E /* FileContentViewController.h */,
+				041C9B611C8D8513009F5A5E /* FileContentViewController.m */,
+				041C9B621C8D8513009F5A5E /* FileContentViewController.xib */,
 			);
 			name = File;
 			sourceTree = "<group>";
@@ -369,6 +384,7 @@
 		04DEEFA21C86A67000A6D5A7 = {
 			isa = PBXGroup;
 			children = (
+				041C9B671C8DC33E009F5A5E /* AVFoundation.framework */,
 				04DEF0461C86A80B00A6D5A7 /* libz.1.2.5.tbd */,
 				04DEF0441C86A80300A6D5A7 /* SystemConfiguration.framework */,
 				04DEF0421C86A7F500A6D5A7 /* MobileCoreServices.framework */,
@@ -389,6 +405,8 @@
 		04DEEFAD1C86A67000A6D5A7 /* MyYiChat */ = {
 			isa = PBXGroup;
 			children = (
+				041C9B651C8DBDCD009F5A5E /* beijingdejinshanshang.mp3 */,
+				041C9B691C8DCCC9009F5A5E /* 超人之死_3.mp4 */,
 				0462E4EA1C8D337200FC5747 /* cell */,
 				04DEF0681C86C85400A6D5A7 /* Tool */,
 				04DEF04B1C86A85A00A6D5A7 /* DAO */,
@@ -703,11 +721,14 @@
 				04EDDF9A1C896BF200AA0B11 /* MySelfTableViewCell.xib in Resources */,
 				04DEEFD91C86A69F00A6D5A7 /* 1.png in Resources */,
 				04DEEFDA1C86A69F00A6D5A7 /* bubble.png in Resources */,
+				041C9B661C8DBDCD009F5A5E /* beijingdejinshanshang.mp3 in Resources */,
 				04DEEFEF1C86A69F00A6D5A7 /* register.png in Resources */,
 				04DEEFB51C86A67000A6D5A7 /* Assets.xcassets in Resources */,
+				041C9B6A1C8DCCC9009F5A5E /* 超人之死_3.mp4 in Resources */,
 				04EDDF9F1C896C0B00AA0B11 /* FriendsTableViewCell.xib in Resources */,
 				04DEEFE01C86A69F00A6D5A7 /* download_button@2x.png in Resources */,
 				04DEEFDD1C86A69F00A6D5A7 /* Default-568h@2x.png in Resources */,
+				041C9B641C8D8513009F5A5E /* FileContentViewController.xib in Resources */,
 				041303611C87FFEC0018FA57 /* NewContentViewController.xib in Resources */,
 				04DEEFB81C86A67000A6D5A7 /* LaunchScreen.storyboard in Resources */,
 				04F6BCD21C89A48400C092B5 /* MyCollectionViewCell.xib in Resources */,
@@ -749,6 +770,7 @@
 				04DEF00F1C86A71300A6D5A7 /* ASIHTTPRequest.m in Sources */,
 				04EDDF8F1C892E6400AA0B11 /* ChatTableViewCell.m in Sources */,
 				04DEEFB31C86A67000A6D5A7 /* AppDelegate.m in Sources */,
+				041C9B631C8D8513009F5A5E /* FileContentViewController.m in Sources */,
 				04DEF0821C86E05300A6D5A7 /* FilesViewController.m in Sources */,
 				04DEF0741C86D9D100A6D5A7 /* MyJson.m in Sources */,
 				04F6BCD51C89C9AE00C092B5 /* FileModel.m in Sources */,

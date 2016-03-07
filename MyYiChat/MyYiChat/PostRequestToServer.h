@@ -13,7 +13,9 @@
 
 @property(nonatomic,assign)id<ASIProgressDelegate>progressDelegate;
 @property(nonatomic,assign)id<PostRequestToServerDelegate>delegate;
--(void)downLoadFileWitnUrl:(NSString *)url;
+-(void)downLoadFileWitnUrl:(NSString *)url name:(NSString *)name;
+-(void)stopDownload;
+
 -(void)sentChatWithName:(NSString *)name chat:(NSString *)chat;
 -(void)getFriends;
 -(void)changePersonMessageLikeNickName:(NSString *)nickName email:(NSString *)email;
@@ -29,8 +31,8 @@
 @end
 @protocol PostRequestToServerDelegate <NSObject>
 
--(void)downLoadFileWitnUrlSucceed:(ASIHTTPRequest *)request;
--(void)downLoadFileWitnUrlFailed:(ASIHTTPRequest *)request;
+-(void)downLoadFileWitnUrlProgress:(float)newProgress;
+
 -(void)getFileMessgeSucceed:(ASIHTTPRequest *)request;
 -(void)getFileMessgeFailed:(ASIHTTPRequest *)request;
 -(void)sentChatWithNameSucceed:(ASIHTTPRequest *)request;

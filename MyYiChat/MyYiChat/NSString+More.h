@@ -11,4 +11,5 @@
 @interface NSString (More)
 +(NSString *)trim:(NSString *)string;
 +(NSString *)changeDate:(NSDate *)date;
++(NSString *)getPathOfDoucoment:(NSString *)name;
 @end
