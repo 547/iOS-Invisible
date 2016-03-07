@@ -8,12 +8,10 @@
 
 #import "PersonViewController.h"
 #import "PersonFristTableViewCell.h"
-#import "UIImageView+WebCache.h"
-#import "PostRequestToServer.h"
+#import "UsefulHeader.h"
 #import "PersonModel.h"
-#import "MyJson.h"
 #import "WelcomViewController.h"
-#define SCREENWIDTH [UIScreen mainScreen].bounds.size.width//屏幕宽
+
 @interface PersonViewController ()<UITableViewDataSource,UITableViewDelegate,PostRequestToServerDelegate>
 
 @end
@@ -119,11 +117,13 @@
         person.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
         NSString *str;
         person.label.text=@"个人信息";
+        
+        [person.image setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:8080/st%@",per.headerUrl]] placeholderImage:[UIImage imageNamed:@"head.png"]];
 
-        if (per.headerUrl!=nil) {
-            NSLog(@"!+333+++=====%@",per.headerUrl);
-            person.image.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:8080/st%@",per.headerUrl]]]];
-        }
+//        if (per.headerUrl!=nil) {
+//            NSLog(@"!+333+++=====%@",per.headerUrl);
+//            person.image.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:8080/st%@",per.headerUrl]]]];
+//        }
         return person;
         
     }else{
@@ -162,13 +162,13 @@
     if (indexPath.section==1) {
         if (indexPath.row==2) {
             //退出登录
-            UIAlertController *alter=[UIAlertController alertControllerWithTitle:@"是否退出登录？" message:nil preferredStyle:UIAlertControllerStyleAlert];
+//            @"是否退出登录?"
+//            @"退出"
+            UIAlertController *alter=[UIAlertController alertControllerWithTitle:@"是否退出登录?" message:nil preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *action1=[UIAlertAction actionWithTitle:@"退出" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                NSLog(@"确定");
                 tuichu=[[PostRequestToServer alloc]init];
                 [tuichu tuiChu];
                 tuichu .delegate=self;
-                
             }];
             UIAlertAction *action2=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
             [alter addAction:action1];
@@ -178,25 +178,15 @@
         }
     }
     if (indexPath.section==2) {
-        UIAlertController *alter=[UIAlertController alertControllerWithTitle:@"欢迎使用易聊" message:nil preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *action1=[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//            NSLog(@"确定");
-//            tuichu=[[PostRequestToServer alloc]init];
-//            [tuichu tuiChu];
-//            tuichu .delegate=self;
-            
-        }];
-        
-        [alter addAction:action1];
-      
-        [self presentViewController:alter animated:YES completion:nil];
+
+        ONECHOOSEALTER(@"欢迎使用易聊");//宏定义alterViewController
     }
 }
 -(void)tuiChuSucceed:(ASIHTTPRequest *)request
 {
    BOOL isok = [MyJson tuiChuJson:[NSJSONSerialization JSONObjectWithData:request.responseData options:NSJSONReadingAllowFragments error:nil]];
     if (isok) {
-        [[NSUserDefaults standardUserDefaults]setObject:nil forKey:@"access_token"];
+        [[NSUserDefaults standardUserDefaults]setObject:nil forKey:@"access_token"];//将存储到本地的access_token制空
         WelcomViewController *welcom=[[WelcomViewController alloc]init];
         [[UIApplication sharedApplication].delegate window].rootViewController=welcom;
     }

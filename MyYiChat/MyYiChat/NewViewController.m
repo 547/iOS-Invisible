@@ -7,11 +7,11 @@
 //
 
 #import "NewViewController.h"
-#import "PostRequestToServer.h"
+#import "UsefulHeader.h"
 #import "OneImageTableViewCell.h"
 #import "NewsModel.h"
 #import "ThreeImageTableViewCell.h"
-#import "UIImageView+WebCache.h"
+
 #import "NewContentViewController.h"
 @interface NewViewController ()<PostRequestToServerDelegate,UITableViewDataSource,UITableViewDelegate>
 
@@ -36,7 +36,7 @@ self.tabBarController.tabBar.hidden=NO;
 -(void)initUI
 {
     self.title=@"新闻中心";
-    table=[[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    table=[[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT) style:UITableViewStylePlain];
 
     table.delegate=self;
     table.dataSource=self;

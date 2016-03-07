@@ -7,9 +7,7 @@
 //
 
 #import "PersonMessageViewController.h"
-#import "PostRequestToServer.h"
-#import "MyJson.h"
-#import "NSString+More.h"
+#import "UsefulHeader.h"
 @interface PersonMessageViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,PostRequestToServerDelegate>
 
 @end
@@ -44,6 +42,7 @@
         [self.emailText addTarget:self action:@selector(changeButton) forControlEvents:UIControlEventEditingChanged];
         [self.nickNameText addTarget:self action:@selector(huiFuButton) forControlEvents:UIControlEventEditingDidEndOnExit];
         [self.emailText addTarget:self action:@selector(huiFuButton) forControlEvents:UIControlEventEditingDidEndOnExit];
+        self.change.userInteractionEnabled=NO;//不可点击,交互性
         self.change.layer.cornerRadius=6;
         self.change.layer.masksToBounds=YES;
 
@@ -52,13 +51,15 @@
     self.headerImage.layer.cornerRadius=6;
     self.headerImage.layer.masksToBounds=YES;
 
-    if (![_per.headerUrl isEqualToString:@"null"]) {
-        NSLog(@"!!!!!++++%@",_per.headerUrl);
-        self.headerImage.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:8080/st%@",_per.headerUrl]]]];
-    }else{
-        
-        self.headerImage.image=[UIImage imageNamed:@"head.png"];
-    }
+    [self.headerImage setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",IMAGEURLHEAD,_per.headerUrl]] placeholderImage:[UIImage imageNamed:@"head.png"]];
+    
+//    if (![_per.headerUrl isEqualToString:@"null"]) {
+//        NSLog(@"!!!!!++++%@",_per.headerUrl);
+//        self.headerImage.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:8080/st%@",_per.headerUrl]]]];
+//    }else{
+//        
+//        self.headerImage.image=[UIImage imageNamed:@"head.png"];
+//    }
     self.nameLabel.text=_per.name;
     self.nickNameText.text=_per.nickName;
     self.emailText.text=_per.email;
@@ -68,7 +69,7 @@
 }
 -(void)huiFuButton
 {
-   
+    self.change.userInteractionEnabled=NO;
     self.change.backgroundColor=[UIColor grayColor];
     [self.change setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.change addTarget:self action:@selector(noChange) forControlEvents:UIControlEventTouchUpInside];
@@ -79,7 +80,7 @@
 }
 -(void)changeButton
 {
-  
+  self.change.userInteractionEnabled=YES;
     self.change.backgroundColor=[UIColor blueColor];
     [self.change setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.change addTarget:self action:@selector(changed:) forControlEvents:UIControlEventTouchUpInside];

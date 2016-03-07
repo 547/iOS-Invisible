@@ -71,7 +71,7 @@
     request.tag=105;
     NSData *data=UIImageJPEGRepresentation(image, 1);
 
-    [request setPostBody:data];
+    [request setPostBody:(NSMutableData *)data];
     request.delegate=self;
     [request startAsynchronous];
 }

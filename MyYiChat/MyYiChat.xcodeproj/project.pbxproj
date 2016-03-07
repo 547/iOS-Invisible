@@ -317,6 +317,55 @@
 			name = cell;
 			sourceTree = "<group>";
 		};
+		0462E4EB1C8D685800FC5747 /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				04DEF0841C86E06200A6D5A7 /* PersonViewController.h */,
+				04DEF0851C86E06200A6D5A7 /* PersonViewController.m */,
+				04DEF0861C86E06200A6D5A7 /* PersonViewController.xib */,
+				0413036A1C8835750018FA57 /* PersonMessageViewController.h */,
+				0413036B1C8835750018FA57 /* PersonMessageViewController.m */,
+				0413036C1C8835750018FA57 /* PersonMessageViewController.xib */,
+			);
+			name = Person;
+			sourceTree = "<group>";
+		};
+		0462E4EC1C8D688300FC5747 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				04DEF0751C86E03400A6D5A7 /* ChatViewController.h */,
+				04DEF0761C86E03400A6D5A7 /* ChatViewController.m */,
+				04DEF0771C86E03400A6D5A7 /* ChatViewController.xib */,
+				04EDDF911C895BD900AA0B11 /* ChattingRoomViewController.h */,
+				04EDDF921C895BD900AA0B11 /* ChattingRoomViewController.m */,
+				04EDDF931C895BD900AA0B11 /* ChattingRoomViewController.xib */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
+		0462E4ED1C8D68A700FC5747 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				04DEF07A1C86E04200A6D5A7 /* NewViewController.h */,
+				04DEF07B1C86E04200A6D5A7 /* NewViewController.m */,
+				04DEF07C1C86E04200A6D5A7 /* NewViewController.xib */,
+				0413035D1C87FFEC0018FA57 /* NewContentViewController.h */,
+				0413035E1C87FFEC0018FA57 /* NewContentViewController.m */,
+				0413035F1C87FFEC0018FA57 /* NewContentViewController.xib */,
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
+		0462E4EE1C8D68BE00FC5747 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				04DEF07F1C86E05300A6D5A7 /* FilesViewController.h */,
+				04DEF0801C86E05300A6D5A7 /* FilesViewController.m */,
+				04DEF0811C86E05300A6D5A7 /* FilesViewController.xib */,
+			);
+			name = File;
+			sourceTree = "<group>";
+		};
 		04DEEFA21C86A67000A6D5A7 = {
 			isa = PBXGroup;
 			children = (
@@ -534,6 +583,10 @@
 		04DEF0491C86A83B00A6D5A7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0462E4EE1C8D68BE00FC5747 /* File */,
+				0462E4ED1C8D68A700FC5747 /* News */,
+				0462E4EB1C8D685800FC5747 /* Person */,
+				0462E4EC1C8D688300FC5747 /* Chat */,
 				04DEF0561C86AC7D00A6D5A7 /* MainViewController.h */,
 				04DEF0571C86AC7D00A6D5A7 /* MainViewController.m */,
 				04DEF0581C86AC7D00A6D5A7 /* MainViewController.xib */,
@@ -543,27 +596,6 @@
 				04DEF0631C86BF0D00A6D5A7 /* LoginViewController.h */,
 				04DEF0641C86BF0D00A6D5A7 /* LoginViewController.m */,
 				04DEF0651C86BF0D00A6D5A7 /* LoginViewController.xib */,
-				04DEF0751C86E03400A6D5A7 /* ChatViewController.h */,
-				04DEF0761C86E03400A6D5A7 /* ChatViewController.m */,
-				04DEF0771C86E03400A6D5A7 /* ChatViewController.xib */,
-				04DEF07A1C86E04200A6D5A7 /* NewViewController.h */,
-				04DEF07B1C86E04200A6D5A7 /* NewViewController.m */,
-				04DEF07C1C86E04200A6D5A7 /* NewViewController.xib */,
-				0413035D1C87FFEC0018FA57 /* NewContentViewController.h */,
-				0413035E1C87FFEC0018FA57 /* NewContentViewController.m */,
-				0413035F1C87FFEC0018FA57 /* NewContentViewController.xib */,
-				04DEF07F1C86E05300A6D5A7 /* FilesViewController.h */,
-				04DEF0801C86E05300A6D5A7 /* FilesViewController.m */,
-				04DEF0811C86E05300A6D5A7 /* FilesViewController.xib */,
-				04DEF0841C86E06200A6D5A7 /* PersonViewController.h */,
-				04DEF0851C86E06200A6D5A7 /* PersonViewController.m */,
-				04DEF0861C86E06200A6D5A7 /* PersonViewController.xib */,
-				0413036A1C8835750018FA57 /* PersonMessageViewController.h */,
-				0413036B1C8835750018FA57 /* PersonMessageViewController.m */,
-				0413036C1C8835750018FA57 /* PersonMessageViewController.xib */,
-				04EDDF911C895BD900AA0B11 /* ChattingRoomViewController.h */,
-				04EDDF921C895BD900AA0B11 /* ChattingRoomViewController.m */,
-				04EDDF931C895BD900AA0B11 /* ChattingRoomViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
