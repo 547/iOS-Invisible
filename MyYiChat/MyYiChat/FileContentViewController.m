@@ -74,9 +74,12 @@
 
 
 }
--(void)showPDF
+-(void)showPDF//展示PDF文件
 {
-
+//    CGPDFDocumentRef 
+//    CGContextRef  path;
+//    path=CFStringCreateWithCString(NULL, <#const char *cStr#>, <#CFStringEncoding encoding#>)
+//CGContextDrawPDFPage(CGContextRef  _Nullable c, <#CGPDFPageRef  _Nullable page#>)
 }
 -(void)createImageView
 {
@@ -84,7 +87,7 @@
     imagaV.image=[UIImage imageWithContentsOfFile:[NSString getPathOfDoucoment:_file.tname]];
     [self.view addSubview:imagaV];
 }
--(void)createMusicPlayer
+-(void)createMusicPlayer//播放音乐
 {
 //    NSString *path=[NSString getPathOfDoucoment:_file.tname];
     NSString *path=[[NSBundle mainBundle]pathForResource:@"beijingdejinshanshang" ofType:@"mp3"];
@@ -92,7 +95,7 @@
     [player play];
 
 }
--(void)createMoiveViewController
+-(void)createMoiveViewController//播放视频
 {
     NSString *path=[NSString getPathOfDoucoment:_file.tname];
    moviePlayer= [[MPMoviePlayerController alloc]initWithContentURL:[NSURL fileURLWithPath:path]];

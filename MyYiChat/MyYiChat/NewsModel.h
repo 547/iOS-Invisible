@@ -26,9 +26,10 @@
 @property(nonatomic,strong)NSString *source;//新闻来源
 @property(nonatomic,strong)NSString *readtimes;//被阅读次数
 @property(nonatomic,strong)NSString *auther;//作者
-@property(nonatomic,strong)NSMutableArray *contentArray;
+@property(nonatomic,strong)NSMutableArray *contentArray;//正文数组=文字+图片
 @property(nonatomic,strong)NSMutableArray *picArray;
 @property(nonatomic,strong)NSDictionary *commentDic;
+@property(nonatomic,strong)NSMutableArray *commentArray;//评论数组
 +(id)createNewwithId:(int)aId type:(int)aType channel:(NSString *)aChannel images:(NSMutableArray *)aImages news_title:(NSString *)aNew_title intro:(NSString *)aIntro source_url:(NSString *)aSource_url time:(NSString *)aTime source:(NSString *)aSource readTimes:(NSString *)aReadTimes auther:(NSString *)aAuther;
 +(id)createNewsContent:(NSString *)aNew_title source:(NSString *)aSource auther:(NSString *)aAuther time:(NSString *)aTime intro:(NSString *)aIntro picArray:(NSMutableArray *)aPicArray contentArray:(NSMutableArray *)aContentArray commentDic:(NSDictionary *)aCommentDic;
 @end

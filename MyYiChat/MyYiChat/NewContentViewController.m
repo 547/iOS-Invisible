@@ -25,7 +25,7 @@
 
     PostRequestToServer *requestContent;
     NewsModel *newsModel;
-    NSMutableArray *contentArray;
+    NSMutableArray *contentArray;//包含评论【0】和正文【1】
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -84,7 +84,7 @@ self.tabBarController.tabBar.hidden=NO;
     UILabel *source=[[UILabel alloc]init];
     CGFloat sourceX=titleX;
     CGFloat sourceY=CGRectGetMaxY(title.frame)+SPACINGMINI;
-    CGSize sourceSize=[self.title sizeWithFont:TIMEFONT];
+    CGSize sourceSize=[self.title sizeWithFont:TITLEFONT constrainedToSize:CGSizeMake(SCREENWIDTH-2*SPACINGMINI, MAXFLOAT)];
     source.frame=(CGRect){{sourceX,sourceY},sourceSize};
     [scroll addSubview:source];
     source.font=TIMEFONT;
@@ -94,18 +94,19 @@ self.tabBarController.tabBar.hidden=NO;
     UILabel *author=[[UILabel alloc]init];
     author.numberOfLines=0;
     CGFloat authorX=CGRectGetMaxX(source.frame)+SPACINGMINI;
-    CGFloat authorY=sourceY;
-    CGSize authorSize=[_news.auther sizeWithFont:TIMEFONT];
+    CGFloat authorY=CGRectGetMaxY(title.frame)+SPACINGMINI;
+    NSString *string=[NSString stringWithFormat:@"%@ %@/文",_news.source,_news.auther];
+    CGSize authorSize=[string sizeWithFont:TITLEFONT constrainedToSize:CGSizeMake(SCREENWIDTH*0.5-2*SPACINGMINI, MAXFLOAT)];
     author.frame=(CGRect){{authorX,authorY},authorSize};
     [scroll addSubview:author];
     source.font=TIMEFONT;
-    source.text=_news.auther;
+    source.text=string;
     
     
     //设置时间的Frame
     UILabel *time=[[UILabel alloc]init];
     CGFloat timeX=CGRectGetMaxX(author.frame)+SpacingOfLine;
-    CGFloat timeY=sourceY;
+    CGFloat timeY=authorY;
     CGSize timeSize=[_news.time sizeWithFont:TIMEFONT];
     time.frame=(CGRect){{timeX,timeY},timeSize};
     [scroll addSubview:time];
