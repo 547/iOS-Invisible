@@ -7,22 +7,18 @@
 //
 
 #import "NewContentViewController.h"
-#import "PostRequestToServer.h"
-#import "MyJson.h"
-#define SCREENWIDTH [UIScreen mainScreen].bounds.size.width//屏幕宽
-#define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height//屏幕宽
-#define SpacingOfLine 10//间距
-#define SPACINGMINI 10
-#define CONTENTFONT [UIFont systemFontOfSize:20]
-#define TITLEFONT [UIFont systemFontOfSize:25]
-#define TIMEFONT [UIFont systemFontOfSize:12]
-@interface NewContentViewController ()<PostRequestToServerDelegate>
+#import "UsefulHeader.h"
+
+@interface NewContentViewController ()<PostRequestToServerDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @end
 
 @implementation NewContentViewController
 {
-
+    NSArray *totalArray;//总数组
+//    NSArray *newsContentArray;//正文数组
+//    NSArray *newsCommentArray;//评论数组
+    UITableView *table;
     PostRequestToServer *requestContent;
     NewsModel *newsModel;
     NSMutableArray *contentArray;//包含评论【0】和正文【1】
@@ -55,8 +51,18 @@ self.tabBarController.tabBar.hidden=NO;
 -(void)getNewsContentSucceed:(ASIHTTPRequest *)request
 {
     contentArray=[MyJson getNewsContentJson:[NSJSONSerialization JSONObjectWithData:request.responseData options:NSJSONReadingAllowFragments error:nil]];
-    [self initLayout];
+    [self initLayout];//用SCrollView展示新闻详情
 }
+-(void)useTableViewShowNews
+{
+    table=[[UITableView alloc]initWithFrame:self.view.frame style:UITableViewStylePlain];
+    table.delegate=self;
+    table.dataSource=self;
+    [self.view addSubview:table];
+    [table registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    
+}
+//用SCrollView展示新闻详情
 -(void)initLayout
 {
     CGFloat scrollHeight=0;
@@ -141,6 +147,7 @@ self.tabBarController.tabBar.hidden=NO;
         NSString *data_type=[contentDict objectForKey:@"data_type"];
         if ([data_type intValue]==1) {//正文
             NSString *content=[contentDict objectForKey:@"content"];
+            
             if (content!=nil) {
                 
                 
@@ -223,7 +230,22 @@ self.tabBarController.tabBar.hidden=NO;
     scroll.contentSize=CGSizeMake(SCREENWIDTH, scrollHeight);
 
 }
-
+#pragma mark===TableView
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 4;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (section==0) {
+        return 2;
+    }else if (section==1){
+        return 1;
+    }else if (section==2){
+        return 0;
+    }
+    return 0;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

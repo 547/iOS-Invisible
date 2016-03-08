@@ -14,6 +14,7 @@
 +(id)createNewsCommentWithArray:(NSDictionary *)commentDic{
     NewsCommentModel *comm=[[NewsCommentModel alloc]init];
     comm.content=[commentDic objectForKey:@"info"];//帖子内容
+    NSLog(@"%@",comm.content);
     comm.author=[commentDic objectForKey:@"name"];//帖子作者
     return comm;
 }

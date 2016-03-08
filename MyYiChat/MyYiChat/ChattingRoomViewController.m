@@ -7,13 +7,9 @@
 //
 
 #import "ChattingRoomViewController.h"
-#define SCREENWIDTH [UIScreen mainScreen].bounds.size.width//屏幕宽
-#define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height//屏幕宽
 #import "MySelfTableViewCell.h"
 #import "FriendsTableViewCell.h"
-#import "PostRequestToServer.h"
-#import "MyJson.h"
-#import "NSString+More.h"
+#import "UsefulHeader.h"
 @interface ChattingRoomViewController ()<UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate,PostRequestToServerDelegate>
 
 @end

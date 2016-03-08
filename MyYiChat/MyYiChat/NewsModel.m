@@ -7,8 +7,28 @@
 //
 
 #import "NewsModel.h"
-
+#import "NewsCommentModel.h"
+#import "NewsContentModel.h"
 @implementation NewsModel
++(id)createNewsWith:(NSDictionary *)dic news:(NewsModel *)news
+{
+    news.commentArray=[[NSMutableArray alloc]init];
+    news.contentArray=[[NSMutableArray alloc]init];
+    NSArray *comments=[dic objectForKey:@"comments"];//帖子的信息
+    NSArray *data=[dic objectForKey:@"data"];//新闻正文
+    //解析pinglun
+    for (NSDictionary *dict in comments) {
+        NewsCommentModel *comment=[NewsCommentModel createNewsCommentWithArray:dict];
+        [news.commentArray addObject:comment];
+    }
+    //解析正文
+    for (NSDictionary *dict in data) {
+        NewsContentModel *content=[NewsContentModel creatNewsContentWith:dict];
+        [news.contentArray addObject:content];
+    }
+    
+    return news;
+}
 +(id)createNewwithId:(int)aId type:(int)aType channel:(NSString *)aChannel images:(NSMutableArray *)aImages news_title:(NSString *)aNew_title intro:(NSString *)aIntro source_url:(NSString *)aSource_url time:(NSString *)aTime source:(NSString *)aSource readTimes:(NSString *)aReadTimes auther:(NSString *)aAuther
 {
     NewsModel *new=[[NewsModel alloc]init];

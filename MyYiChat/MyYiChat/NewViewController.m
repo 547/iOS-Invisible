@@ -11,7 +11,7 @@
 #import "OneImageTableViewCell.h"
 #import "NewsModel.h"
 #import "ThreeImageTableViewCell.h"
-
+#import "NewNewsContentViewController.h"
 #import "NewContentViewController.h"
 @interface NewViewController ()<PostRequestToServerDelegate,UITableViewDataSource,UITableViewDelegate>
 
@@ -134,8 +134,10 @@ self.tabBarController.tabBar.hidden=NO;
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NewContentViewController *newContent=[[NewContentViewController alloc]init];
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+//    NewContentViewController *newContent=[[NewContentViewController alloc]init];
+//    newContent.news=[newArray objectAtIndex:indexPath.row];
+    NewNewsContentViewController *newContent=[[NewNewsContentViewController alloc]init];
     newContent.news=[newArray objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:newContent animated:YES];
 }

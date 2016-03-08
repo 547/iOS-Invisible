@@ -14,8 +14,18 @@
 #import "MyJson.h"
 #import "NSString+More.h"
 #import "UIImageView+WebCache.h"
+#import "NewsContentModel.h"
+#import "NewsCommentModel.h"
+#import "NewsModel.h"
 
 
+#define SpacingOfLine 10//间距
+#define SPACINGMINI 10
+#define SYSTEMMINIFONT [UIFont systemFontOfSize:15]
+#define SYSTEMFONT [UIFont systemFontOfSize:17]
+#define CONTENTFONT [UIFont systemFontOfSize:19]
+#define TITLEFONT [UIFont systemFontOfSize:20]
+#define TIMEFONT [UIFont systemFontOfSize:12]
 #define IMAGEURLHEAD @"http://localhost:8080/st"//image的url的头部
 #define URLHEAD @"http://localhost:8080/st/s"
 #define SCREENWIDTH [UIScreen mainScreen].bounds.size.width//屏幕宽

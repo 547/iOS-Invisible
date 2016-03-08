@@ -30,6 +30,7 @@
 @property(nonatomic,strong)NSMutableArray *picArray;
 @property(nonatomic,strong)NSDictionary *commentDic;
 @property(nonatomic,strong)NSMutableArray *commentArray;//评论数组
++(id)createNewsWith:(NSDictionary *)dic news:(NewsModel *)news;
 +(id)createNewwithId:(int)aId type:(int)aType channel:(NSString *)aChannel images:(NSMutableArray *)aImages news_title:(NSString *)aNew_title intro:(NSString *)aIntro source_url:(NSString *)aSource_url time:(NSString *)aTime source:(NSString *)aSource readTimes:(NSString *)aReadTimes auther:(NSString *)aAuther;
 +(id)createNewsContent:(NSString *)aNew_title source:(NSString *)aSource auther:(NSString *)aAuther time:(NSString *)aTime intro:(NSString *)aIntro picArray:(NSMutableArray *)aPicArray contentArray:(NSMutableArray *)aContentArray commentDic:(NSDictionary *)aCommentDic;
 @end
