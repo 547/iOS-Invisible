@@ -99,6 +99,7 @@
 		04DEF0981C87061700A6D5A7 /* ThreeImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04DEF0961C87061700A6D5A7 /* ThreeImageTableViewCell.xib */; };
 		04DEF09C1C871F1B00A6D5A7 /* 111.png in Resources */ = {isa = PBXBuildFile; fileRef = 04DEF09B1C871F1B00A6D5A7 /* 111.png */; };
 		04DEF0A41C8732D300A6D5A7 /* NewsContentFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DEF0A31C8732D300A6D5A7 /* NewsContentFrame.m */; };
+		04E065581C8FBE3400A1E746 /* MyDownloadTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E065571C8FBE3400A1E746 /* MyDownloadTool.m */; };
 		04EBED751C8E7E2F009272F5 /* NewNewsContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EBED731C8E7E2F009272F5 /* NewNewsContentViewController.m */; };
 		04EBED761C8E7E2F009272F5 /* NewNewsContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EBED741C8E7E2F009272F5 /* NewNewsContentViewController.xib */; };
 		04EBED791C8E8326009272F5 /* NewsCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EBED781C8E8326009272F5 /* NewsCommentModel.m */; };
@@ -268,6 +269,8 @@
 		04DEF09B1C871F1B00A6D5A7 /* 111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 111.png; sourceTree = "<group>"; };
 		04DEF0A21C8732D300A6D5A7 /* NewsContentFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsContentFrame.h; sourceTree = "<group>"; };
 		04DEF0A31C8732D300A6D5A7 /* NewsContentFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsContentFrame.m; sourceTree = "<group>"; };
+		04E065561C8FBE3400A1E746 /* MyDownloadTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDownloadTool.h; sourceTree = "<group>"; };
+		04E065571C8FBE3400A1E746 /* MyDownloadTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDownloadTool.m; sourceTree = "<group>"; };
 		04EBED721C8E7E2F009272F5 /* NewNewsContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewNewsContentViewController.h; sourceTree = "<group>"; };
 		04EBED731C8E7E2F009272F5 /* NewNewsContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewNewsContentViewController.m; sourceTree = "<group>"; };
 		04EBED741C8E7E2F009272F5 /* NewNewsContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewNewsContentViewController.xib; sourceTree = "<group>"; };
@@ -671,6 +674,8 @@
 				04DEF0A21C8732D300A6D5A7 /* NewsContentFrame.h */,
 				04DEF0A31C8732D300A6D5A7 /* NewsContentFrame.m */,
 				0462E4E91C8D2EBC00FC5747 /* UsefulHeader.h */,
+				04E065561C8FBE3400A1E746 /* MyDownloadTool.h */,
+				04E065571C8FBE3400A1E746 /* MyDownloadTool.m */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -808,6 +813,7 @@
 				04EBEDAC1C8ECA23009272F5 /* NewsContentModel.m in Sources */,
 				041C9B631C8D8513009F5A5E /* FileContentViewController.m in Sources */,
 				04DEF0821C86E05300A6D5A7 /* FilesViewController.m in Sources */,
+				04E065581C8FBE3400A1E746 /* MyDownloadTool.m in Sources */,
 				04DEF0741C86D9D100A6D5A7 /* MyJson.m in Sources */,
 				04F6BCD51C89C9AE00C092B5 /* FileModel.m in Sources */,
 				04DEF06B1C86C86900A6D5A7 /* NSString+More.m in Sources */,

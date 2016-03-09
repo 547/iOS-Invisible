@@ -28,7 +28,7 @@
             </view>
             <size key="customSize" width="72" height="80"/>
             <connections>
-                <outlet property="contentButton" destination="SmN-Sl-Ybj" id="4Aj-ep-h8w"/>
+                <outlet property="contentButton" destination="SmN-Sl-Ybj" id="QrF-Va-kVd"/>
                 <outlet property="nameLabel" destination="jHO-ff-ZMR" id="hPu-ly-ByX"/>
             </connections>
             <point key="canvasLocation" x="341" y="347"/>

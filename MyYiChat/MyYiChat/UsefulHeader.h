@@ -17,9 +17,13 @@
 #import "NewsContentModel.h"
 #import "NewsCommentModel.h"
 #import "NewsModel.h"
-#import "MyCollectionViewCell.h"
 #import "FileModel.h"
 #import "UIButton+WebCache.h"
+#import "MyDownloadTool.h"
+#import "FileModel.h"
+
+
+
 
 #define loyoutWidth 100
 #define SpacingOfLine 10//间距

@@ -7,18 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MyButton.h"
-@protocol MyCollectionViewCellDelegate;
+#import"MyButton.h"
 @interface MyCollectionViewCell : UICollectionViewCell
-@property (weak, nonatomic) IBOutlet MyButton *contentButton;
-@property (weak, nonatomic) IBOutlet UIImageView *mainImage;
-@property (weak, nonatomic) IBOutlet UILabel *centerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *viewLabel;
-@property(nonatomic,assign)id<MyCollectionViewCellDelegate>delegate;
-@end
-@protocol MyCollectionViewCellDelegate <NSObject>
-
--(void)dainiji;
-
+@property (weak, nonatomic) IBOutlet MyButton *contentButton;
+//@class MyButton;//防止循环引用
 @end

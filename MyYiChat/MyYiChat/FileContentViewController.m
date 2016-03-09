@@ -10,13 +10,14 @@
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import "UsefulHeader.h"
-#define RECT CGRectMake(0, 64, SCREENWIDTH, 260)
-@interface FileContentViewController ()
+#define RECT CGRectMake(0, 0, SCREENWIDTH, 260)
+@interface FileContentViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
 
 @implementation FileContentViewController
 {
+    UITableView *table;
     AVAudioPlayer *player;
     MPMoviePlayerController *moviePlayer;
     
@@ -28,7 +29,17 @@
 }
 -(void)initUI
 {
+    self.automaticallyAdjustsScrollViewInsets=NO;
+    self.tabBarController.tabBar.hidden=YES;
     self.navigationController.navigationBar.hidden=NO;
+    table=[[UITableView alloc]initWithFrame:CGRectMake(0, 64, SCREENWIDTH, SCREENHEIGHT-64-49) style:UITableViewStylePlain];
+    table.delegate=self;
+    table.dataSource=self;
+    table.separatorStyle=UITableViewCellSeparatorStyleNone;
+    [self.view addSubview:table];
+    [table registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    
+
     self.title=_file.name;
     NSLog(@"====++++====%@",_file.name);
     /*
@@ -40,39 +51,46 @@
      4-jpg
      
      */
-   
     switch (_file.type) {
         case 0:{
             if ([_file.url rangeOfString:@"png"].length>0) {
                 //展示图片
-                [self createImageView];
+               table.tableHeaderView = [self createImageView];
             }else {
                 //展示pdf文档
+                table.tableHeaderView =[self createWeb];
+
             }
         }
             break;
         case 1:
-            //MP3
-            [self createMusicPlayer];
-            break;
         case 2:
             //MP4
-            [self createMoiveViewController];
+          table.tableHeaderView =  [self createMoiveViewController];
             break;
         case 3:
             //doc
+            table.tableHeaderView =[self createWeb];
             break;
         case 4:
             //jpg
-            [self createImageView];
+           table.tableHeaderView = [self createImageView];
             break;
             
         default:
             break;
     }
+    
+    
 
 
 
+}
+-(UIWebView *)createWeb
+{
+    UIWebView *web=[[UIWebView alloc]initWithFrame:RECT];
+    [web loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[NSString getPathOfDoucoment:[NSString stringWithFormat:@"file%@",_file.tname]]]]];
+    return web;
 }
 -(void)showPDF//展示PDF文件
 {
@@ -81,11 +99,12 @@
 //    path=CFStringCreateWithCString(NULL, <#const char *cStr#>, <#CFStringEncoding encoding#>)
 //CGContextDrawPDFPage(CGContextRef  _Nullable c, <#CGPDFPageRef  _Nullable page#>)
 }
--(void)createImageView
+-(UIImageView *)createImageView
 {
     UIImageView *imagaV=[[UIImageView alloc]initWithFrame:RECT];
-    imagaV.image=[UIImage imageWithContentsOfFile:[NSString getPathOfDoucoment:_file.tname]];
-    [self.view addSubview:imagaV];
+    imagaV.image=[UIImage imageWithContentsOfFile:[NSString getPathOfDoucoment:[NSString stringWithFormat:@"file%@",_file.tname]]];
+    return imagaV;
+    
 }
 -(void)createMusicPlayer//播放音乐
 {
@@ -95,16 +114,92 @@
     [player play];
 
 }
--(void)createMoiveViewController//播放视频
+-(UIView *)createMoiveViewController//播放视频
 {
-    NSString *path=[NSString getPathOfDoucoment:_file.tname];
+    NSString *path=[NSString getPathOfDoucoment:[NSString stringWithFormat:@"file%@",_file.tname]];
    moviePlayer= [[MPMoviePlayerController alloc]initWithContentURL:[NSURL fileURLWithPath:path]];
     moviePlayer.view.frame=RECT;
-    [self.view addSubview:moviePlayer.view];
     [moviePlayer play];
+    return moviePlayer.view;
+    
 }
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row==0) {
+        return 40;
 
+    }else if (indexPath.row==1||indexPath.row==5){
+    return 80;
+    }else if (indexPath.row==6){
+    
+        return 260;
+    }else{
+        return 30;
+    }
 
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+
+    return 7;
+    
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
+    cell.backgroundColor=[UIColor whiteColor];
+    cell.textLabel.font=SYSTEMFONT;
+    cell.textLabel.text=nil;
+    cell.textLabel.textColor=[UIColor blackColor];
+    
+    switch (indexPath.row) {
+        case 0:
+            //
+            cell.backgroundColor=[UIColor lightGrayColor];
+            cell.textLabel.font=TITLEFONT;
+            cell.textLabel.text=_file.name;
+            cell.textLabel.textColor=[UIColor blueColor];
+            break;
+        case 1:
+            //
+            cell.textLabel.font=TITLEFONT;
+            cell.textLabel.text=@"资源介绍：";
+            cell.textLabel.textColor=[UIColor blueColor];
+            break;
+        case 2:
+            //
+            cell.textLabel.font=CONTENTFONT;
+            cell.textLabel.text=[NSString stringWithFormat:@"上传者：%@",_file.author];
+            break;
+        case 3:
+            //
+            cell.textLabel.font=CONTENTFONT;
+            cell.textLabel.text=[NSString stringWithFormat:@"上传时间：%@",_file.time];
+            break;
+        case 4:
+            //
+            cell.textLabel.font=CONTENTFONT;
+            cell.textLabel.text=[NSString stringWithFormat:@"下载次数：%d",_file.dtimes];
+            break;
+        case 5:
+            //
+            cell.textLabel.font=TITLEFONT;
+            cell.textLabel.text=@"内容介绍：";
+            cell.textLabel.textColor=[UIColor blueColor];
+            break;
+        case 6:
+            //
+            cell.textLabel.numberOfLines=0;
+            cell.textLabel.font=CONTENTFONT;
+            cell.textLabel.text=_file.fileDescription;
+            
+            break;
+        default:
+            break;
+    }
+    return cell;
+}
 
 
 

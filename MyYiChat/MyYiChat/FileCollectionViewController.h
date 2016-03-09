@@ -10,6 +10,6 @@
 
 @interface FileCollectionViewController : UIViewController
 @property(nonatomic,strong)NSMutableArray *fileArray;
--(id)initWithArray:(NSMutableArray *)array;
+
 -(id)init;
 @end

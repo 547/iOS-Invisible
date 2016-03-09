@@ -8,10 +8,10 @@
 
 #import "FilesViewController.h"
 #import "UsefulHeader.h"
-#import "MyCollectionViewCell.h"
 #import "FileContentViewController.h"
 #import "FileCollectionViewController.h"
-@interface FilesViewController ()<PostRequestToServerDelegate,UICollectionViewDataSource,UICollectionViewDelegate,MyCollectionViewCellDelegate,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate,ASIProgressDelegate>
+#import "MyCollectionViewCell.h"
+@interface FilesViewController ()<PostRequestToServerDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate,ASIProgressDelegate>
 
 @end
 
@@ -51,7 +51,7 @@
     for (int i=0; i<2; i++) {
         
         FileCollectionViewController *fileVC=[[FileCollectionViewController alloc]init];
-        fileVC.view.frame=CGRectMake(SCREENWIDTH*i, 0, SCREENWIDTH, scroll.frame.size.height);
+        fileVC.view.frame=CGRectMake(SCREENWIDTH*i, 0, SCREENWIDTH, scroll.frame.size.height-49);
         if (i==0) {
             fileVC.fileArray=fileRightArray;
         }else{
@@ -59,6 +59,7 @@
         }
         NSLog(@"========%lu",(unsigned long)fileVC.fileArray.count);
         [scroll addSubview:fileVC.view];
+        [self addChildViewController:fileVC];
     }
     
     //    [collectionLeft reloadData];
@@ -68,7 +69,7 @@
 
 -(void)initUI
 {
-    
+    self.automaticallyAdjustsScrollViewInsets=NO;
     [self setTopView];
     [self setMiddleView];
 
@@ -87,6 +88,9 @@
     segment.selectedSegmentIndex=0;
     [segment addTarget:self action:@selector(cheakSegment:) forControlEvents:UIControlEventValueChanged];
    //    [topView addSubview:segment];
+    
+    UIBarButtonItem *right=[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"download_button.png"] style:UIBarButtonItemStyleDone target:self action:@selector(goToDownloadedViewControll)];
+    self.navigationItem.rightBarButtonItem=right;
 }
 -(void)setMiddleView
 {
@@ -174,23 +178,23 @@
    
     cell.nameLabel.adjustsFontSizeToFitWidth=YES;
     cell.nameLabel.text=file.name;
-    [cell.mainImage setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",file.image_url]]];
-    if (file.isDownload) {
+//    [cell.mainImage setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",file.image_url]]];
+//    if (file.isDownload) {
         
         //
-        cell.centerLabel.text=[NSString stringWithFormat:@"%0.2f%@",currentProgress*100,@"%"];
-        //半透明的label做下载进度条，其高度随下载进度变化
-        CGFloat x=cell.viewLabel.frame.origin.x;
-        CGFloat height=cell.mainImage.frame.size.height*currentProgress;
-        cell.viewLabel.frame=CGRectMake(x, height, cell.viewLabel.frame.size.width, height);
-        if (currentProgress==1.0) {
-            cell.centerLabel.text=@"查看";
-            file.downloaded=YES;
-            cell.viewLabel.hidden=YES;
-        }
-        
+//        cell.centerLabel.text=[NSString stringWithFormat:@"%0.2f%@",currentProgress*100,@"%"];
+//        //半透明的label做下载进度条，其高度随下载进度变化
+//        CGFloat x=cell.viewLabel.frame.origin.x;
+//        CGFloat height=cell.mainImage.frame.size.height*currentProgress;
+//        cell.viewLabel.frame=CGRectMake(x, height, cell.viewLabel.frame.size.width, height);
+//        if (currentProgress==1.0) {
+//            cell.centerLabel.text=@"查看";
+//            file.downloaded=YES;
+//            cell.viewLabel.hidden=YES;
+//        }
+    
 
-    }
+//    }
     
     
     return cell;
@@ -255,6 +259,10 @@
         ;
     }
     
+}
+-(void)goToDownloadedViewControll
+{
+    NSLog(@"fdsfds");
 }
 -(void)viewWillAppear:(BOOL)animated
 {
