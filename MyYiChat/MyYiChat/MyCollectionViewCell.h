@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyButton.h"
 @protocol MyCollectionViewCellDelegate;
 @interface MyCollectionViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet MyButton *contentButton;
 @property (weak, nonatomic) IBOutlet UIImageView *mainImage;
 @property (weak, nonatomic) IBOutlet UILabel *centerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;

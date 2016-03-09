@@ -17,8 +17,11 @@
 #import "NewsContentModel.h"
 #import "NewsCommentModel.h"
 #import "NewsModel.h"
+#import "MyCollectionViewCell.h"
+#import "FileModel.h"
+#import "UIButton+WebCache.h"
 
-
+#define loyoutWidth 100
 #define SpacingOfLine 10//间距
 #define SPACINGMINI 10
 #define SYSTEMMINIFONT [UIFont systemFontOfSize:15]

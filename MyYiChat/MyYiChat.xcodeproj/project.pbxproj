@@ -103,6 +103,8 @@
 		04EBED761C8E7E2F009272F5 /* NewNewsContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EBED741C8E7E2F009272F5 /* NewNewsContentViewController.xib */; };
 		04EBED791C8E8326009272F5 /* NewsCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EBED781C8E8326009272F5 /* NewsCommentModel.m */; };
 		04EBEDAC1C8ECA23009272F5 /* NewsContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EBEDAB1C8ECA23009272F5 /* NewsContentModel.m */; };
+		04EBEDAF1C8F0B76009272F5 /* FileCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EBEDAE1C8F0B76009272F5 /* FileCollectionViewController.m */; };
+		04EBEDB31C8F0F4F009272F5 /* MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EBEDB21C8F0F4F009272F5 /* MyButton.m */; };
 		04EDDF8F1C892E6400AA0B11 /* ChatTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EDDF8D1C892E6400AA0B11 /* ChatTableViewCell.m */; };
 		04EDDF901C892E6400AA0B11 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04EDDF8E1C892E6400AA0B11 /* ChatTableViewCell.xib */; };
 		04EDDF941C895BDA00AA0B11 /* ChattingRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EDDF921C895BD900AA0B11 /* ChattingRoomViewController.m */; };
@@ -273,6 +275,10 @@
 		04EBED781C8E8326009272F5 /* NewsCommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCommentModel.m; sourceTree = "<group>"; };
 		04EBEDAA1C8ECA23009272F5 /* NewsContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsContentModel.h; sourceTree = "<group>"; };
 		04EBEDAB1C8ECA23009272F5 /* NewsContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsContentModel.m; sourceTree = "<group>"; };
+		04EBEDAD1C8F0B76009272F5 /* FileCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileCollectionViewController.h; sourceTree = "<group>"; };
+		04EBEDAE1C8F0B76009272F5 /* FileCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileCollectionViewController.m; sourceTree = "<group>"; };
+		04EBEDB11C8F0F4F009272F5 /* MyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyButton.h; sourceTree = "<group>"; };
+		04EBEDB21C8F0F4F009272F5 /* MyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyButton.m; sourceTree = "<group>"; };
 		04EDDF8C1C892E6400AA0B11 /* ChatTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatTableViewCell.h; sourceTree = "<group>"; };
 		04EDDF8D1C892E6400AA0B11 /* ChatTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatTableViewCell.m; sourceTree = "<group>"; };
 		04EDDF8E1C892E6400AA0B11 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
@@ -389,6 +395,8 @@
 				041C9B601C8D8513009F5A5E /* FileContentViewController.h */,
 				041C9B611C8D8513009F5A5E /* FileContentViewController.m */,
 				041C9B621C8D8513009F5A5E /* FileContentViewController.xib */,
+				04EBEDAD1C8F0B76009272F5 /* FileCollectionViewController.h */,
+				04EBEDAE1C8F0B76009272F5 /* FileCollectionViewController.m */,
 			);
 			name = File;
 			sourceTree = "<group>";
@@ -418,6 +426,7 @@
 			isa = PBXGroup;
 			children = (
 				041C9B651C8DBDCD009F5A5E /* beijingdejinshanshang.mp3 */,
+				04EBEDB01C8F0F34009272F5 /* MyButton */,
 				0462E4EA1C8D337200FC5747 /* cell */,
 				04DEF0681C86C85400A6D5A7 /* Tool */,
 				04DEF04B1C86A85A00A6D5A7 /* DAO */,
@@ -666,6 +675,15 @@
 			name = Tool;
 			sourceTree = "<group>";
 		};
+		04EBEDB01C8F0F34009272F5 /* MyButton */ = {
+			isa = PBXGroup;
+			children = (
+				04EBEDB11C8F0F4F009272F5 /* MyButton.h */,
+				04EBEDB21C8F0F4F009272F5 /* MyButton.m */,
+			);
+			name = MyButton;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -781,6 +799,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04EBEDB31C8F0F4F009272F5 /* MyButton.m in Sources */,
 				04EBED791C8E8326009272F5 /* NewsCommentModel.m in Sources */,
 				04DEF00E1C86A71300A6D5A7 /* ASIFormDataRequest.m in Sources */,
 				04DEF00F1C86A71300A6D5A7 /* ASIHTTPRequest.m in Sources */,
@@ -801,6 +820,7 @@
 				04DEF0341C86A71E00A6D5A7 /* SDWebImageManager.m in Sources */,
 				041303601C87FFEC0018FA57 /* NewContentViewController.m in Sources */,
 				04DEF0121C86A71300A6D5A7 /* Reachability.m in Sources */,
+				04EBEDAF1C8F0B76009272F5 /* FileCollectionViewController.m in Sources */,
 				04EDDF9E1C896C0B00AA0B11 /* FriendsTableViewCell.m in Sources */,
 				04EDDF941C895BDA00AA0B11 /* ChattingRoomViewController.m in Sources */,
 				041303651C8826030018FA57 /* PersonFristTableViewCell.m in Sources */,

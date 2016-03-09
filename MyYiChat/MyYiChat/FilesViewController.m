@@ -10,7 +10,7 @@
 #import "UsefulHeader.h"
 #import "MyCollectionViewCell.h"
 #import "FileContentViewController.h"
-#define loyoutWidth 100
+#import "FileCollectionViewController.h"
 @interface FilesViewController ()<PostRequestToServerDelegate,UICollectionViewDataSource,UICollectionViewDelegate,MyCollectionViewCellDelegate,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate,ASIProgressDelegate>
 
 @end
@@ -33,6 +33,7 @@
     // Do any additional setup after loading the view from its nib.
     [self initUI];
     [self getFileMessage];
+    
 }
 -(void)getFileMessage
 {
@@ -43,6 +44,28 @@
     
     
 }
+-(void)getFileMessgeSucceed:(ASIHTTPRequest *)request
+{
+    fileLeftArray= [MyJson getPersonFileMessage:[NSJSONSerialization JSONObjectWithData:request.responseData options:NSJSONReadingAllowFragments error:nil]];
+    fileRightArray= [MyJson getPublicFileMessage:[NSJSONSerialization JSONObjectWithData:request.responseData options:NSJSONReadingAllowFragments error:nil]];
+    for (int i=0; i<2; i++) {
+        
+        FileCollectionViewController *fileVC=[[FileCollectionViewController alloc]init];
+        fileVC.view.frame=CGRectMake(SCREENWIDTH*i, 0, SCREENWIDTH, scroll.frame.size.height);
+        if (i==0) {
+            fileVC.fileArray=fileRightArray;
+        }else{
+            fileVC.fileArray=fileLeftArray;
+        }
+        NSLog(@"========%lu",(unsigned long)fileVC.fileArray.count);
+        [scroll addSubview:fileVC.view];
+    }
+    
+    //    [collectionLeft reloadData];
+    //    [collectionRight reloadData];
+    
+}
+
 -(void)initUI
 {
     
@@ -52,19 +75,22 @@
 }
 -(void)setTopView
 {
-    UIView *topView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREENWIDTH, 64)];
-    topView.backgroundColor=[UIColor colorWithWhite:0.1 alpha:0.05];
-    [self.view addSubview:topView];
+//    UIView *topView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREENWIDTH, 64)];
+//    topView.backgroundColor=[UIColor colorWithWhite:0.1 alpha:0.05];
+//    [self.view addSubview:topView];
+    
     segment=[[UISegmentedControl alloc]initWithItems:@[@"公共资源",@"个人资源"]];
-    segment.center=topView.center;
+    self.navigationItem.titleView=segment;
+    segment.center=self.navigationItem.titleView.center;
+//    segment.center=topView.center;
     segment.bounds=CGRectMake(0, 0, SCREENWIDTH/3, 64*0.5);
     segment.selectedSegmentIndex=0;
     [segment addTarget:self action:@selector(cheakSegment:) forControlEvents:UIControlEventValueChanged];
-    [topView addSubview:segment];
+   //    [topView addSubview:segment];
 }
 -(void)setMiddleView
 {
-    scroll=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 65, SCREENWIDTH, SCREENHEIGHT-65)];
+    scroll=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 64, SCREENWIDTH, SCREENHEIGHT-64)];
     scroll.tag=3;
     scroll.delegate=self;
     scroll.pagingEnabled=YES;
@@ -73,15 +99,22 @@
     scroll.contentSize=CGSizeMake(2*SCREENWIDTH, scroll.frame.size.height);
     [self.view addSubview:scroll];
     
-   collectionLeft = [self createCollectionViewWithFrame:CGRectMake(0, 0, SCREENWIDTH, scroll.frame.size.height)];
+//    [self addSubViewToScroll];
+    
+    NSLog(@"%@",fileLeftArray);
+    
+    
+    
+}
+-(void)addSubViewToScroll
+{
+    collectionLeft = [self createCollectionViewWithFrame:CGRectMake(0, 0, SCREENWIDTH, scroll.frame.size.height)];
     [scroll addSubview:collectionLeft];
     collectionLeft.tag=1;
     
     collectionRight = [self createCollectionViewWithFrame:CGRectMake(SCREENWIDTH, 0, SCREENWIDTH, scroll.frame.size.height)];
     [scroll addSubview:collectionRight];
     collectionRight.tag=2;
-
-    
 }
 -(UICollectionView *)createCollectionViewWithFrame:(CGRect)frame
 {
@@ -209,13 +242,6 @@
 
 }
 
--(void)getFileMessgeSucceed:(ASIHTTPRequest *)request
-{
-   fileLeftArray= [MyJson getPersonFileMessage:[NSJSONSerialization JSONObjectWithData:request.responseData options:NSJSONReadingAllowFragments error:nil]];
-    fileRightArray= [MyJson getPublicFileMessage:[NSJSONSerialization JSONObjectWithData:request.responseData options:NSJSONReadingAllowFragments error:nil]];
-    [collectionLeft reloadData];
-    [collectionRight reloadData];
-}
 //点击选项卡UISegmentedControl
 -(void)cheakSegment:(UISegmentedControl *)se
 {
@@ -232,8 +258,9 @@
 }
 -(void)viewWillAppear:(BOOL)animated
 {
+   
     self.tabBarController.tabBar.hidden=NO;
-    self.navigationController.navigationBar.hidden=YES;
+//    self.navigationController.navigationBar.hidden=YES;
     
     
 }
