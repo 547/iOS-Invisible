@@ -11,6 +11,7 @@
 #import "FileContentViewController.h"
 #import "FileCollectionViewController.h"
 #import "MyCollectionViewCell.h"
+#import "DownloadedFilesViewController.h"
 @interface FilesViewController ()<PostRequestToServerDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UIScrollViewDelegate,ASIProgressDelegate>
 
 @end
@@ -262,7 +263,30 @@
 }
 -(void)goToDownloadedViewControll
 {
-    NSLog(@"fdsfds");
+
+    DownloadedFilesViewController *down=[[DownloadedFilesViewController alloc]init];
+    down.tableArray=[self getDownloadedFiles];
+    [self.navigationController pushViewController:down animated:YES];
+}
+-(NSMutableArray *)getDownloadedFiles
+{
+    NSMutableArray *filesArray=[[NSMutableArray alloc]init];
+    for (FileModel *file in fileLeftArray) {
+        if ([[NSFileManager defaultManager]fileExistsAtPath:[NSString getPathOfDoucoment:[NSString stringWithFormat:@"file%@",file.tname]]]) {//如果存在就说明已经下载
+            [filesArray addObject:file];
+        }
+        
+    }
+    for (FileModel *file in fileRightArray) {
+        if ([[NSFileManager defaultManager]fileExistsAtPath:[NSString getPathOfDoucoment:[NSString stringWithFormat:@"file%@",file.tname]]]) {//如果存在就说明已经下载
+            [filesArray addObject:file];
+        }
+        
+    }
+
+    
+    
+    return filesArray;
 }
 -(void)viewWillAppear:(BOOL)animated
 {

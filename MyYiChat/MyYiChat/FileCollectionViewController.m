@@ -16,6 +16,7 @@
 
 @implementation FileCollectionViewController
 {
+    
     NSMutableDictionary *downloadDictionary;
     MyDownloadTool *download;
 }
@@ -136,7 +137,7 @@
                 [self.navigationController pushViewController:content animated:YES];}
                 break;
 
-                
+
             default:
                 break;
         }

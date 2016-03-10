@@ -18,6 +18,7 @@
 		041C9B641C8D8513009F5A5E /* FileContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041C9B621C8D8513009F5A5E /* FileContentViewController.xib */; };
 		041C9B661C8DBDCD009F5A5E /* beijingdejinshanshang.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 041C9B651C8DBDCD009F5A5E /* beijingdejinshanshang.mp3 */; };
 		041C9B681C8DC33E009F5A5E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 041C9B671C8DC33E009F5A5E /* AVFoundation.framework */; };
+		046C92121C90743200A45F92 /* DownloadedFilesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046C92111C90743200A45F92 /* DownloadedFilesViewController.m */; };
 		04DEEFB01C86A67000A6D5A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DEEFAF1C86A67000A6D5A7 /* main.m */; };
 		04DEEFB31C86A67000A6D5A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DEEFB21C86A67000A6D5A7 /* AppDelegate.m */; };
 		04DEEFB51C86A67000A6D5A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DEEFB41C86A67000A6D5A7 /* Assets.xcassets */; };
@@ -138,6 +139,8 @@
 		041C9B651C8DBDCD009F5A5E /* beijingdejinshanshang.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beijingdejinshanshang.mp3; sourceTree = "<group>"; };
 		041C9B671C8DC33E009F5A5E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		0462E4E91C8D2EBC00FC5747 /* UsefulHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UsefulHeader.h; sourceTree = "<group>"; };
+		046C92101C90743200A45F92 /* DownloadedFilesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadedFilesViewController.h; sourceTree = "<group>"; };
+		046C92111C90743200A45F92 /* DownloadedFilesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadedFilesViewController.m; sourceTree = "<group>"; };
 		04DEEFAB1C86A67000A6D5A7 /* MyYiChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyYiChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DEEFAF1C86A67000A6D5A7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		04DEEFB11C86A67000A6D5A7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -400,6 +403,8 @@
 				041C9B621C8D8513009F5A5E /* FileContentViewController.xib */,
 				04EBEDAD1C8F0B76009272F5 /* FileCollectionViewController.h */,
 				04EBEDAE1C8F0B76009272F5 /* FileCollectionViewController.m */,
+				046C92101C90743200A45F92 /* DownloadedFilesViewController.h */,
+				046C92111C90743200A45F92 /* DownloadedFilesViewController.m */,
 			);
 			name = File;
 			sourceTree = "<group>";
@@ -829,6 +834,7 @@
 				04EBEDAF1C8F0B76009272F5 /* FileCollectionViewController.m in Sources */,
 				04EDDF9E1C896C0B00AA0B11 /* FriendsTableViewCell.m in Sources */,
 				04EDDF941C895BDA00AA0B11 /* ChattingRoomViewController.m in Sources */,
+				046C92121C90743200A45F92 /* DownloadedFilesViewController.m in Sources */,
 				041303651C8826030018FA57 /* PersonFristTableViewCell.m in Sources */,
 				04DEF0311C86A71E00A6D5A7 /* SDImageCache.m in Sources */,
 				04DEF03F1C86A72E00A6D5A7 /* Base64.m in Sources */,

@@ -160,6 +160,9 @@
         [self.navigationController pushViewController:message animated:YES];
     }
     if (indexPath.section==1) {
+        
+        
+        
         if (indexPath.row==2) {
             //退出登录
 //            @"是否退出登录?"
