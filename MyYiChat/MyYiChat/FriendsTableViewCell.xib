@@ -17,7 +17,7 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="head.png" translatesAutoresizingMaskIntoConstraints="NO" id="Z87-Vi-zZh">
                         <rect key="frame" x="10" y="29" width="60" height="60"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bubble.png" translatesAutoresizingMaskIntoConstraints="NO" id="c3M-lD-bAj">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c3M-lD-bAj">
                         <rect key="frame" x="87" y="29" width="306" height="70"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7V-yd-jXU">
@@ -48,7 +48,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="bubble.png" width="50" height="41"/>
         <image name="head.png" width="170" height="170"/>
     </resources>
 </document>

@@ -82,6 +82,7 @@
     [self.view addSubview:table];
 
 }
+#pragma mask==点击发送按钮
 -(void)sentMessage:(UIButton *)butt
 {
     NSLog(@"点击按钮");
@@ -130,25 +131,34 @@
     
 }
 #pragma mark==UITableViewDataSource,UITableViewDelegate
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"========%f",[MySelfTableViewCell getCellHeightWithModel:[chatArray objectAtIndex:indexPath.row]]);
+    return 100;
+}
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return chatArray.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+   
    ChatModel *chat= chatArray[indexPath.row];
     if ([chat.friendName isEqualToString:_friends.name]) {
         NSLog(@"ziji!!!!");
         
          MySelfTableViewCell *myself=[tableView dequeueReusableCellWithIdentifier:@"self" forIndexPath:indexPath];
         myself.selectionStyle=UITableViewCellSelectionStyleNone;
-        UIImage *ima= [UIImage imageNamed:@"bubbleSelf.png"];
-//        [ima stretchableImageWithLeftCapWidth:9 topCapHeight:5];
-        [ima resizableImageWithCapInsets:UIEdgeInsetsMake(10, 25, 10, 25) resizingMode:UIImageResizingModeStretch];
-        myself.chatImage.image=ima;
-        myself.headerImage.image=[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:8080/st%@",_mySelf.headerUrl]]]];
-        myself.timeLabel.text=[chat.chatContent componentsSeparatedByString:@"|"][0];
-        myself.chatLabel.text=[chat.chatContent componentsSeparatedByString:@"|"][1];
+        
+        myself.chat=chat;
+        myself.head_url=_mySelf.headerUrl;
+//        UIImage *ima= [UIImage imageNamed:@"bubbleSelf.png"];
+////        [ima stretchableImageWithLeftCapWidth:9 topCapHeight:5];
+//        [ima resizableImageWithCapInsets:UIEdgeInsetsMake(10, 25, 10, 25) resizingMode:UIImageResizingModeStretch];
+//        myself.chatImage.image=ima;
+//        [myself.headerImage setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:8080/st%@",_mySelf.headerUrl]] placeholderImage:[UIImage imageNamed:@"head.png"]];
+//        myself.timeLabel.text=[chat.chatContent componentsSeparatedByString:@"|"][0];
+//        myself.chatLabel.text=[chat.chatContent componentsSeparatedByString:@"|"][1];
         return myself;
         
     }else {
@@ -183,6 +193,7 @@
 
 
 
+
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     [self.view endEditing:YES];
@@ -191,15 +202,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

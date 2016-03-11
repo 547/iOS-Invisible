@@ -1,0 +1,45 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{04C6E35C-F31D-290E-6A03-9B54D1C59E31}") = "ShareRECUnity3dGameSample", "Assembly-CSharp-firstpass.csproj", "{F3E5D565-12F8-3992-E6DC-2CD6E7D6B390}"
+EndProject
+Project("{04C6E35C-F31D-290E-6A03-9B54D1C59E31}") = "ShareRECUnity3dGameSample", "Assembly-CSharp.csproj", "{D6FAA9AF-44BE-E3CE-A654-D611A4FBE19F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3E5D565-12F8-3992-E6DC-2CD6E7D6B390}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3E5D565-12F8-3992-E6DC-2CD6E7D6B390}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3E5D565-12F8-3992-E6DC-2CD6E7D6B390}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3E5D565-12F8-3992-E6DC-2CD6E7D6B390}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6FAA9AF-44BE-E3CE-A654-D611A4FBE19F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6FAA9AF-44BE-E3CE-A654-D611A4FBE19F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6FAA9AF-44BE-E3CE-A654-D611A4FBE19F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6FAA9AF-44BE-E3CE-A654-D611A4FBE19F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+																									GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+		Policies = $0
+		$0.TextStylePolicy = $1
+		$1.inheritsSet = null
+		$1.scope = text/x-csharp
+		$0.CSharpFormattingPolicy = $2
+		$2.inheritsSet = Mono
+		$2.inheritsScope = text/x-csharp
+		$2.scope = text/x-csharp
+		$0.TextStylePolicy = $3
+		$3.FileWidth = 120
+		$3.TabWidth = 4
+		$3.EolMarker = Unix
+		$3.inheritsSet = Mono
+		$3.inheritsScope = text/plain
+		$3.scope = text/plain
+	EndGlobalSection
+
+EndGlobal

@@ -1,0 +1,22 @@
+dependencies: \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/Capture/ScreenRecorder/SREScreenCaptureContext.mm \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/Capture/ScreenRecorder/SREScreenCaptureContext.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/SRENameDef.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/ZTCommon/ZTCCoreDef.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/Capture/ScreenRecorder/SREScreenRecorder.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/Capture/ScreenCapture/ISREScreenCaptureSession.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/Capture/ScreenRecorder/SREVideoInfo.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/Capture/ScreenRecorder/NSDictionary+SREScreenRecorder.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/Capture/ScreenCapture/SREOpenGLESScreenCaptureSession.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/SREContext.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/SRERecording.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/ShareRECTypeDef.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/SRERecording_Private.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/SRERecordError.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/Capture/ScreenRecorder/SREAudioRecorder.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/SREAudioRecorder_NameDef.h \
+  /Users/liyc/Documents/ShareREC/bin/MOBFoundation.framework/Headers/MOBFString.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/SRERecordingManager.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/Capture/ScreenRecorder/SREScreenCapture.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/Capture/ScreenCapture/SREMetalScreenCaptureSession.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/Capture/ScreenCapture/SREUIViewScreenRecorder.h

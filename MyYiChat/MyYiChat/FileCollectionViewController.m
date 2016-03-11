@@ -70,6 +70,9 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     MyCollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    
+    
+    
     FileModel *file=_fileArray[indexPath.row];
     cell.nameLabel.text=file.name;
     cell.contentButton.file=file;
@@ -107,7 +110,7 @@
         }
     
     }else{//最终地址和临时地址都没
-    
+        cell.contentButton.progress=0.0;//这句话必须设置，可以避免因为单元格重用而引起错乱
         cell.contentButton.buttonStatus=MyButtonDefaultStatus;
     }
     
@@ -168,11 +171,6 @@
     }
     
     
-}
-#pragma mark==MyDownloadToolDelegate
--(void)getProgress:(float)newProgress
-{
-
 }
 
 

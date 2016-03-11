@@ -55,6 +55,7 @@
     switch (_buttonStatus) {
         case MyButtonDefaultStatus:
             //默认状态
+        
             [self setTitle:@"下载" forState:UIControlStateNormal];
             break;
         case MyButtonDownloadingStatus:

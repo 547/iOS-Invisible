@@ -181,6 +181,7 @@ NewsModel *newnew=[NewsModel createNewsContent:news.news_title source:news.sourc
 }
 +(void)getChatMessage:(NSDictionary *)dic
 {
+    NSArray *data=[dic objectForKey:@"data"];
     NSLog(@"%@",dic);
 }
 +(BOOL)sentChatMessage:(NSDictionary *)dic

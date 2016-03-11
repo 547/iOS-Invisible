@@ -1,0 +1,37 @@
+dependencies: \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/ShareRECDemo/AppDelegate.m \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/ShareRECDemo/AppDelegate.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/ShareRECDemo/ViewController.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/../ShareREC/ShareREC.framework/Headers/ShareREC.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/../ShareREC/ShareREC.framework/Headers/Extention/SRERecording.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/../ShareREC/ShareREC.framework/Headers/Extention/ShareRECTypeDef.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/../ShareREC/ShareRECSocial.framework/Headers/ShareRECSocial.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/../ShareREC/ShareREC.framework/Headers/Extention/ShareREC+Ext.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/ShareSDK.framework/Headers/ShareSDK.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/ShareSDK.framework/Headers/NSMutableDictionary+SSDKInit.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/ShareSDK.framework/Headers/SSDKTypeDefine.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/ShareSDK.framework/Headers/NSMutableDictionary+SSDKShare.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/ShareSDK.framework/Headers/SSDKImage.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/ShareSDK.framework/Headers/SSDKData.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/ShareSDK.framework/Headers/SSDKUserQueryConditional.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/ShareSDK.framework/Headers/SSDKContentEntity.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/ShareSDK.framework/Headers/SSDKUser.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/ShareSDK.framework/Headers/SSDKCredential.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/ShareSDK.framework/Headers/SSDKAuthViewStyle.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/ShareSDKConnector.framework/Headers/ShareSDKConnector.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/extends/WeChatSDK/WXApi.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/extends/WeChatSDK/WXApiObject.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/extends/QQSDK/TencentOpenAPI.framework/Headers/QQApiInterface.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/extends/QQSDK/TencentOpenAPI.framework/Headers/QQApiInterfaceObject.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/extends/QQSDK/TencentOpenAPI.framework/Headers/TencentOAuth.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/extends/QQSDK/TencentOpenAPI.framework/Headers/sdkdef.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/extends/QQSDK/TencentOpenAPI.framework/Headers/TencentOAuthObject.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/extends/SinaWeiboSDK/WeiboSDK.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/extends/SinaWeiboSDK/WBHttpRequest.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/extends/SinaWeiboSDK/WBHttpRequest+WeiboUser.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/extends/SinaWeiboSDK/WBHttpRequest+WeiboShare.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/extends/SinaWeiboSDK/WBHttpRequest+WeiboToken.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/extends/SinaWeiboSDK/WBHttpRequest+WeiboGame.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/extends/SinaWeiboSDK/WBSDKRelationshipButton.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/extends/SinaWeiboSDK/WBSDKBasicButton.h \
+  /Users/liyc/Documents/Release/1_1_6/ShareRECDemo/libraries/extends/SinaWeiboSDK/WBSDKCommentButton.h

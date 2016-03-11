@@ -13,6 +13,7 @@
 #import "PersonModel.h"
 #import "PersonMessageViewController.h"
 #import "ChattingRoomViewController.h"
+#import "NSString+More.h"
 @interface ChatViewController ()<UITableViewDataSource,UITableViewDelegate,PostRequestToServerDelegate>
 
 @end
@@ -22,12 +23,15 @@
     NSMutableArray *friendArray;
     UITableView *table;
     PostRequestToServer *friendsRequest;
+    PostRequestToServer *chatRequset;
+    NSMutableDictionary *chatDictionary;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self initData];
     [self initUI];
+    [self getChatMeaage];
     
 }
 -(void)viewWillAppear:(BOOL)animated
@@ -40,6 +44,7 @@
 
 -(void)initData
 {
+    chatDictionary=[[NSMutableDictionary alloc]init];
 //    friendArray=[[NSMutableArray alloc]init];
 
 }
@@ -116,9 +121,31 @@
     
 }
 
-
-
-
+-(void)getChatMeaage
+{
+    chatRequset=[[PostRequestToServer alloc]init];
+    [chatRequset getChatMessage];
+    chatRequset.delegate=self;
+}
+#pragma mark==PostRequestToServerDelegate
+-(void)getChatMessageSucceed:(ASIHTTPRequest *)request
+{
+    NSDictionary *dic=[NSJSONSerialization JSONObjectWithData:request.responseData options:NSJSONReadingAllowFragments error:nil];
+    NSArray *data=[dic objectForKey:@"data"];
+    NSLog(@"----%@",data);
+    
+    
+    
+}
+-(void)saveChatContentWithArray:(NSArray *)array
+{
+    NSFileManager *file=[NSFileManager defaultManager];
+    if ([file fileExistsAtPath:[NSString getPathOfDoucoment:@"chat.plist"]]) {
+        
+//        [array writeToFile:[NSString getPathOfDoucoment:@"chat.plist"] atomically:YES];
+    }else{
+    }
+}
 
 
 

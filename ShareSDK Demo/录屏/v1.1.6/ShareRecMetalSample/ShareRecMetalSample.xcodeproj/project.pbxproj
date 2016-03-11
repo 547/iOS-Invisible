@@ -1,0 +1,407 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6B0B04631C3CF92D00317981 /* ShareREC.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B0B04571C3CF92D00317981 /* ShareREC.strings */; };
+		6B0B04641C3CF92D00317981 /* ShareRECSocial.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B0B04591C3CF92D00317981 /* ShareRECSocial.strings */; };
+		6B0B04651C3CF92D00317981 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B0B045B1C3CF92D00317981 /* MOBFoundation.framework */; };
+		6B0B04661C3CF92D00317981 /* ShareREC.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6B0B045C1C3CF92D00317981 /* ShareREC.bundle */; };
+		6B0B04671C3CF92D00317981 /* ShareREC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B0B045D1C3CF92D00317981 /* ShareREC.framework */; };
+		6B0B04681C3CF92D00317981 /* ShareRECSocial.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6B0B045E1C3CF92D00317981 /* ShareRECSocial.bundle */; };
+		6B0B04691C3CF92D00317981 /* ShareRECSocial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B0B045F1C3CF92D00317981 /* ShareRECSocial.framework */; };
+		6B1FC1401B6230540046D04A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1FC13F1B6230540046D04A /* main.m */; };
+		6B1FC1431B6230540046D04A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1FC1421B6230540046D04A /* AppDelegate.m */; };
+		6B1FC1461B6230540046D04A /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1FC1451B6230540046D04A /* GameViewController.m */; };
+		6B1FC1481B6230540046D04A /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 6B1FC1471B6230540046D04A /* Shaders.metal */; };
+		6B1FC14B1B6230540046D04A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B1FC1491B6230540046D04A /* Main.storyboard */; };
+		6B1FC14D1B6230540046D04A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B1FC14C1B6230540046D04A /* Images.xcassets */; };
+		6B1FC1501B6230540046D04A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B1FC14E1B6230540046D04A /* LaunchScreen.xib */; };
+		6B1FC1981B6235A90046D04A /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1FC1971B6235A90046D04A /* libicucore.dylib */; };
+		6B1FC19A1B6235BA0046D04A /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1FC1991B6235BA0046D04A /* libz.1.2.5.dylib */; };
+		6B1FC19C1B6235C20046D04A /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B1FC19B1B6235C20046D04A /* libstdc++.dylib */; };
+		6B7ECAA41B688A3200A1929D /* logo_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6B7ECAA31B688A3200A1929D /* logo_1.mp3 */; };
+		6B7ECAA61B688C9700A1929D /* JY.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6B7ECAA51B688C9700A1929D /* JY.mp3 */; };
+		6B7ECAA81B68A72500A1929D /* CA.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6B7ECAA71B68A72500A1929D /* CA.mp3 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6B0B04581C3CF92D00317981 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ShareREC.strings; sourceTree = "<group>"; };
+		6B0B045A1C3CF92D00317981 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ShareRECSocial.strings; sourceTree = "<group>"; };
+		6B0B045B1C3CF92D00317981 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		6B0B045C1C3CF92D00317981 /* ShareREC.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareREC.bundle; sourceTree = "<group>"; };
+		6B0B045D1C3CF92D00317981 /* ShareREC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareREC.framework; sourceTree = "<group>"; };
+		6B0B045E1C3CF92D00317981 /* ShareRECSocial.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareRECSocial.bundle; sourceTree = "<group>"; };
+		6B0B045F1C3CF92D00317981 /* ShareRECSocial.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareRECSocial.framework; sourceTree = "<group>"; };
+		6B0B04611C3CF92D00317981 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ShareREC.strings"; sourceTree = "<group>"; };
+		6B0B04621C3CF92D00317981 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ShareRECSocial.strings"; sourceTree = "<group>"; };
+		6B1FC13A1B6230540046D04A /* ShareRecMetalSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareRecMetalSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B1FC13E1B6230540046D04A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B1FC13F1B6230540046D04A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6B1FC1411B6230540046D04A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6B1FC1421B6230540046D04A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6B1FC1441B6230540046D04A /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		6B1FC1451B6230540046D04A /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		6B1FC1471B6230540046D04A /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		6B1FC14A1B6230540046D04A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6B1FC14C1B6230540046D04A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6B1FC14F1B6230540046D04A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		6B1FC1971B6235A90046D04A /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		6B1FC1991B6235BA0046D04A /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		6B1FC19B1B6235C20046D04A /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		6B7ECAA31B688A3200A1929D /* logo_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = logo_1.mp3; sourceTree = "<group>"; };
+		6B7ECAA51B688C9700A1929D /* JY.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = JY.mp3; sourceTree = "<group>"; };
+		6B7ECAA71B68A72500A1929D /* CA.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CA.mp3; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6B1FC1371B6230540046D04A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B0B04651C3CF92D00317981 /* MOBFoundation.framework in Frameworks */,
+				6B0B04671C3CF92D00317981 /* ShareREC.framework in Frameworks */,
+				6B0B04691C3CF92D00317981 /* ShareRECSocial.framework in Frameworks */,
+				6B1FC19C1B6235C20046D04A /* libstdc++.dylib in Frameworks */,
+				6B1FC19A1B6235BA0046D04A /* libz.1.2.5.dylib in Frameworks */,
+				6B1FC1981B6235A90046D04A /* libicucore.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6B0B04561C3CF92D00317981 /* ShareREC */ = {
+			isa = PBXGroup;
+			children = (
+				6B0B04571C3CF92D00317981 /* ShareREC.strings */,
+				6B0B04591C3CF92D00317981 /* ShareRECSocial.strings */,
+				6B0B045B1C3CF92D00317981 /* MOBFoundation.framework */,
+				6B0B045C1C3CF92D00317981 /* ShareREC.bundle */,
+				6B0B045D1C3CF92D00317981 /* ShareREC.framework */,
+				6B0B045E1C3CF92D00317981 /* ShareRECSocial.bundle */,
+				6B0B045F1C3CF92D00317981 /* ShareRECSocial.framework */,
+			);
+			name = ShareREC;
+			path = ../ShareREC;
+			sourceTree = "<group>";
+		};
+		6B1FC1311B6230540046D04A = {
+			isa = PBXGroup;
+			children = (
+				6B0B04561C3CF92D00317981 /* ShareREC */,
+				6B1FC19B1B6235C20046D04A /* libstdc++.dylib */,
+				6B1FC1991B6235BA0046D04A /* libz.1.2.5.dylib */,
+				6B1FC1971B6235A90046D04A /* libicucore.dylib */,
+				6B1FC13C1B6230540046D04A /* ShareRecMetalSample */,
+				6B1FC13B1B6230540046D04A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6B1FC13B1B6230540046D04A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6B1FC13A1B6230540046D04A /* ShareRecMetalSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6B1FC13C1B6230540046D04A /* ShareRecMetalSample */ = {
+			isa = PBXGroup;
+			children = (
+				6B1FC1411B6230540046D04A /* AppDelegate.h */,
+				6B1FC1421B6230540046D04A /* AppDelegate.m */,
+				6B1FC1441B6230540046D04A /* GameViewController.h */,
+				6B1FC1451B6230540046D04A /* GameViewController.m */,
+				6B1FC1471B6230540046D04A /* Shaders.metal */,
+				6B1FC1491B6230540046D04A /* Main.storyboard */,
+				6B1FC14C1B6230540046D04A /* Images.xcassets */,
+				6B1FC14E1B6230540046D04A /* LaunchScreen.xib */,
+				6B7ECAA51B688C9700A1929D /* JY.mp3 */,
+				6B7ECAA71B68A72500A1929D /* CA.mp3 */,
+				6B7ECAA31B688A3200A1929D /* logo_1.mp3 */,
+				6B1FC13D1B6230540046D04A /* Supporting Files */,
+			);
+			path = ShareRecMetalSample;
+			sourceTree = "<group>";
+		};
+		6B1FC13D1B6230540046D04A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6B1FC13E1B6230540046D04A /* Info.plist */,
+				6B1FC13F1B6230540046D04A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6B1FC1391B6230540046D04A /* ShareRecMetalSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B1FC15F1B6230540046D04A /* Build configuration list for PBXNativeTarget "ShareRecMetalSample" */;
+			buildPhases = (
+				6B1FC1361B6230540046D04A /* Sources */,
+				6B1FC1371B6230540046D04A /* Frameworks */,
+				6B1FC1381B6230540046D04A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareRecMetalSample;
+			productName = ShareRecMetalSample;
+			productReference = 6B1FC13A1B6230540046D04A /* ShareRecMetalSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6B1FC1321B6230540046D04A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = liyc;
+				TargetAttributes = {
+					6B1FC1391B6230540046D04A = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+				};
+			};
+			buildConfigurationList = 6B1FC1351B6230540046D04A /* Build configuration list for PBXProject "ShareRecMetalSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = 6B1FC1311B6230540046D04A;
+			productRefGroup = 6B1FC13B1B6230540046D04A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6B1FC1391B6230540046D04A /* ShareRecMetalSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6B1FC1381B6230540046D04A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B7ECAA81B68A72500A1929D /* CA.mp3 in Resources */,
+				6B0B04681C3CF92D00317981 /* ShareRECSocial.bundle in Resources */,
+				6B7ECAA61B688C9700A1929D /* JY.mp3 in Resources */,
+				6B0B04631C3CF92D00317981 /* ShareREC.strings in Resources */,
+				6B1FC14B1B6230540046D04A /* Main.storyboard in Resources */,
+				6B7ECAA41B688A3200A1929D /* logo_1.mp3 in Resources */,
+				6B1FC1501B6230540046D04A /* LaunchScreen.xib in Resources */,
+				6B0B04661C3CF92D00317981 /* ShareREC.bundle in Resources */,
+				6B0B04641C3CF92D00317981 /* ShareRECSocial.strings in Resources */,
+				6B1FC14D1B6230540046D04A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6B1FC1361B6230540046D04A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B1FC1481B6230540046D04A /* Shaders.metal in Sources */,
+				6B1FC1431B6230540046D04A /* AppDelegate.m in Sources */,
+				6B1FC1461B6230540046D04A /* GameViewController.m in Sources */,
+				6B1FC1401B6230540046D04A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6B0B04571C3CF92D00317981 /* ShareREC.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B0B04581C3CF92D00317981 /* en */,
+				6B0B04611C3CF92D00317981 /* zh-Hans */,
+			);
+			name = ShareREC.strings;
+			sourceTree = "<group>";
+		};
+		6B0B04591C3CF92D00317981 /* ShareRECSocial.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B0B045A1C3CF92D00317981 /* en */,
+				6B0B04621C3CF92D00317981 /* zh-Hans */,
+			);
+			name = ShareRECSocial.strings;
+			sourceTree = "<group>";
+		};
+		6B1FC1491B6230540046D04A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B1FC14A1B6230540046D04A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6B1FC14E1B6230540046D04A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B1FC14F1B6230540046D04A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6B1FC15D1B6230540046D04A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chen GangQiang (785VZN2ZN7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chen GangQiang (785VZN2ZN7)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../ShareREC";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "62c787fc-209c-4e12-a295-3f05aa6fb46d";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6B1FC15E1B6230540046D04A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chen GangQiang (785VZN2ZN7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chen GangQiang (785VZN2ZN7)";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../ShareREC";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "62c787fc-209c-4e12-a295-3f05aa6fb46d";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6B1FC1601B6230540046D04A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chen GangQiang (785VZN2ZN7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chen GangQiang (785VZN2ZN7)";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = ShareRecMetalSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "62c787fc-209c-4e12-a295-3f05aa6fb46d";
+			};
+			name = Debug;
+		};
+		6B1FC1611B6230540046D04A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chen GangQiang (785VZN2ZN7)";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = ShareRecMetalSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "62c787fc-209c-4e12-a295-3f05aa6fb46d";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6B1FC1351B6230540046D04A /* Build configuration list for PBXProject "ShareRecMetalSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B1FC15D1B6230540046D04A /* Debug */,
+				6B1FC15E1B6230540046D04A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6B1FC15F1B6230540046D04A /* Build configuration list for PBXNativeTarget "ShareRecMetalSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B1FC1601B6230540046D04A /* Debug */,
+				6B1FC1611B6230540046D04A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6B1FC1321B6230540046D04A /* Project object */;
+}

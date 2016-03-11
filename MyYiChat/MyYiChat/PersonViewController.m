@@ -11,7 +11,7 @@
 #import "UsefulHeader.h"
 #import "PersonModel.h"
 #import "WelcomViewController.h"
-
+#import "SDImageCache.h"
 @interface PersonViewController ()<UITableViewDataSource,UITableViewDelegate,PostRequestToServerDelegate>
 
 @end
@@ -133,11 +133,25 @@
         if (indexPath.section==1) {
             if (indexPath.row==0) {
                 
-                cell.textLabel.text=@"清理图片缓存";
+                
+            //获取图片缓存大小
+              long long size=  [[SDImageCache sharedImageCache]getSize];
+               
+                cell.textLabel.text=[NSString stringWithFormat:@"清理图片缓存(%0.2fM)",[self sizeFormatterWithByte:size]];
+                
             }
             if (indexPath.row==1) {
                 
-                cell.textLabel.text=@"清理文件缓存";
+                //获取下载的所有文件的大小
+                //Enumerator==计数器
+                long long size=0;
+               NSDirectoryEnumerator *enumer= [[NSFileManager defaultManager]enumeratorAtPath:[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]];
+                while ([enumer nextObject]) {
+                    size +=  enumer.fileAttributes.fileSize;
+                }
+                cell.textLabel.text=[NSString stringWithFormat:@"清理文件缓存(%0.2fM)",[self sizeFormatterWithByte:size]];
+                
+                
             }
             if (indexPath.row==2) {
                 
@@ -160,7 +174,29 @@
         [self.navigationController pushViewController:message animated:YES];
     }
     if (indexPath.section==1) {
-        
+        if (indexPath.row==0) {
+            UIAlertController *alter=[UIAlertController alertControllerWithTitle:@"是否清理图片缓存?" message:nil preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *action1=[UIAlertAction actionWithTitle:@"清理" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [[SDImageCache sharedImageCache]clearDisk];
+                [tableView reloadData];
+            }];
+            UIAlertAction *action2=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+            [alter addAction:action1];
+            [alter addAction:action2];
+            [self presentViewController:alter animated:YES completion:nil];
+        }
+        if (indexPath.row==1) {
+            UIAlertController *alter=[UIAlertController alertControllerWithTitle:@"是否清理文件缓存?" message:nil preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *action1=[UIAlertAction actionWithTitle:@"清理" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [[NSFileManager defaultManager]removeItemAtPath:[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] error:nil];
+                [[NSFileManager defaultManager]createDirectoryAtPath:[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] withIntermediateDirectories:YES attributes:nil error:nil];
+                [tableView reloadData];
+            }];
+            UIAlertAction *action2=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+            [alter addAction:action1];
+            [alter addAction:action2];
+            [self presentViewController:alter animated:YES completion:nil];
+        }
         
         
         if (indexPath.row==2) {
@@ -198,6 +234,15 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+//大小转换器
+-(float)sizeFormatterWithByte:(long long)byte;
+{
+    float length=(float)byte;
+    return length/1024.0/1024.0;
+}
+
 
 /*
 #pragma mark - Navigation

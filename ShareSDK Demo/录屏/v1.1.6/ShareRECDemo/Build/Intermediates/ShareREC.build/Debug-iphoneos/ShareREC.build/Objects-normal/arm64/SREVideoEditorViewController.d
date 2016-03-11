@@ -1,0 +1,35 @@
+dependencies: \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/UI/SREVideoEditorViewController.m \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/UI/SREVideoEditorViewController.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/SRENameDef.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/ZTCommon/ZTCCoreDef.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/ShareRECTypeDef.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/ZTCommon/ZTCVideoPlayer.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/UI/SREVideoEditorViewTopbar.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/UI/SREVideoEditorViewProgressView.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/UI/SREVideoPlayerProgressView.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/UI/SREVideoEditorViewToolbar.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/Capture/SoundEngine/SRESoundEngine.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/Capture/SoundEngine/SREAudioDef.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/Capture/SoundEngine/SRESoundChannel_NameDef.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/Capture/SoundEngine/SREAudioCaptureObserver_NameDef.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/SREContext.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/Capture/ScreenRecorder/SREScreenCaptureContext.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/UI/SREVideoEditorCommentMenu.h \
+  /Users/liyc/Documents/ShareREC/bin/MOBFoundation.framework/Headers/MOBFDevice.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/UI/SREVideoEditorTipsPanel.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/Capture/SoundEngine/AVAudioPlayer+ShareREC.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/UI/SREVideoEditorCommentView.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/ZTCommon/ZTCVideoPlayer_NameDef.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/SREAudioRecorder_NameDef.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/SREVideoRecorder_NameDef.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/SRERecording.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/SRERecording_Private.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/UI/SREWindow.h \
+  /Users/liyc/Documents/ShareREC/bin/MOBFoundation.framework/Headers/MOBFImage.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/SREShareRECSocialProxy.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/ShareREC+Private.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/ShareREC.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/UI/SREVideoPlayerViewController.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/Capture/ScreenRecorder/SREAudioRecorder.h \
+  /Users/liyc/Documents/ShareREC/ShareREC/ShareREC/SREVideoRecorder.h
